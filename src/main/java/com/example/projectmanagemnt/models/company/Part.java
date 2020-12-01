@@ -9,7 +9,7 @@ import java.util.List;
 public class Part {
     private long id;
     private String name;
-    private Long adminId;
+    private long adminId;
     private String description;
     private Activity activity;
     private List<Employee> employeesForPart;

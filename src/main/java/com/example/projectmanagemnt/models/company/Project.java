@@ -14,7 +14,7 @@ public class Project {
     private String subject;
     private String deadLine;
     private String document;
-    private Employee manager;
+    private long managerId;
     private List<Employee> employeesForProject;
     private List<Task> tasks;
     private List<Ticket> tickets;
