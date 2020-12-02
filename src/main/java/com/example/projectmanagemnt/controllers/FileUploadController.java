@@ -13,7 +13,7 @@ import java.nio.file.Paths;
 
 @Controller
 public class FileUploadController {
-    public static String uploadDirectory = System.getProperty("user.dir") + "/uploads";
+    public static String uploadDirectory = System.getProperty("user.dir") + "/src/main/resources/static/uploads";
 
     @RequestMapping("/")
     public String uploadPage(Model model) {

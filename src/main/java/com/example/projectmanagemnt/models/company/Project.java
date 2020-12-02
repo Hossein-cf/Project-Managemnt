@@ -15,7 +15,7 @@ public class Project {
     private String deadLine;
     private String document;
     private long managerId;
-    private List<Employee> employeesForProject;
+   // private List<Employee> employeesForProject;
     private List<Task> tasks;
     private List<Ticket> tickets;
     private ProjectCondition condition;

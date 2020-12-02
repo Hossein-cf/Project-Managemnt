@@ -18,7 +18,7 @@ public class Employee {
     private String phoneNumber;
     private List<Ticket> tickets;
     private String imageAddress;
-    private Part part;
+    private long partId;
     private long companyId;
 
 
