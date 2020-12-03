@@ -43,12 +43,15 @@ public class DB {
     }
 
     public ReceiveEmailModel getEmailById(long emailId) {
+        ReceiveEmailModel model1 = emails.getFirst();
+        emails.removeIf(emailModel -> emailModel.getId() == emailId);
         AtomicReference<ReceiveEmailModel> model = new AtomicReference<>();
         emails.forEach(emailModel -> {
             if (emailModel.getId() == emailId)
                 model.set(emailModel);
         });
         return model.get();
+        
     }
 
     //ticket
@@ -162,7 +165,7 @@ public class DB {
         List<Long> employeeIds = getEmployeeIdFromMapping(projectId);
         List<Employee> list = new LinkedList<>();
         employeeIds.forEach(item ->
-            list.add(getEmployee(item))
+                list.add(getEmployee(item))
         );
         return list;
     }
@@ -224,11 +227,12 @@ public class DB {
         return customer.get();
 
     }
-    public List<Customer>getAllCustomersForCompany(long companyId) {
-       List<Customer> list = new LinkedList<>();
+
+    public List<Customer> getAllCustomersForCompany(long companyId) {
+        List<Customer> list = new LinkedList<>();
         customers.forEach(customer1 -> {
             if (customer1.getCompanyId() == companyId)
-              list.add(customer1);
+                list.add(customer1);
         });
         return list;
 

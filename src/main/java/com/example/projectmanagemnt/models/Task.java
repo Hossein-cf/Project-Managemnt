@@ -1,23 +1,26 @@
 package com.example.projectmanagemnt.models;
 
+import com.example.projectmanagemnt.models.enums.TaskCondition;
 import lombok.Data;
 
 import java.util.Date;
 
 @Data
 public class Task {
+
     private long id;
     private long projectId;
     private Date crateTime;
     private Date endTime;
     private TaskCondition condition;
     private long generatorId;
+    private long destinationId;
     private String title;
     private String description;
     private String fileAddress;
-    private long destinationId;
-    private long partId;
+    private long employeeId;
     private long companyId;
+
 
     /*•	Id
 •	Project id
@@ -32,7 +35,5 @@ public class Task {
 •	File address
 •
 */
-}
-enum TaskCondition {
 }
 

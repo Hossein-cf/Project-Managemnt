@@ -1,6 +1,7 @@
 package com.example.projectmanagemnt.models.company;
 
 import com.example.projectmanagemnt.models.Ticket;
+import com.example.projectmanagemnt.models.enums.PartActivity;
 import lombok.Data;
 
 import java.util.List;
@@ -11,7 +12,7 @@ public class Part {
     private String name;
     private long adminId;
     private String description;
-    private Activity activity;
+    private PartActivity partActivity;
     private List<Employee> employeesForPart;
     private List<Ticket> tickets;
     private double satisfactionPercentage;//    درصد رضایت
@@ -29,6 +30,4 @@ public class Part {
 //•	درصد رضایت
 //•	email
 
-}
-enum Activity {
 }
