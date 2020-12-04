@@ -16,9 +16,7 @@ public class AddCompany  {
     @GetMapping(path = "/companyGet",consumes = "application/json",produces = "application/json")
    public Company get(@RequestBody long ID){
         System.out.println(ID);
-        Company company;
-        company=dbHelper.getCompany(ID);
-        return company;
+        return dbHelper.getCompany(ID);
 
     }
     @DeleteMapping(path = "/companyDelete",consumes = "application/json",produces = "application/json")
