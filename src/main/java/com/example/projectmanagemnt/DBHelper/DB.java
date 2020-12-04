@@ -144,6 +144,10 @@ public class DB {
     }
 
     //employee
+    public void deleteEmployee(Employee employee){
+        companies.removeIf(employee1 -> employee1.getId()==employee.getId());
+
+    }
     public Employee getEmployee(long id) {
         AtomicReference<Employee> employee = new AtomicReference<>();
         employees.forEach(e -> {
