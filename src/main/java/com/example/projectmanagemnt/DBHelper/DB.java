@@ -204,6 +204,10 @@ public class DB {
     }
 
     //customer
+    public void deleteCustomer(Customer customer){
+        companies.removeIf(customer1 -> customer1.getId()==customer.getId());
+
+    }
     public void addCustomer(Customer customer) {
         customer.setId(id++);
         customers.add(customer);
@@ -318,6 +322,15 @@ public class DB {
     }
 
     //company
+    public void deleteCompany(Company company){
+        companies.removeIf(company1 -> company1.getId()==company.getId());
+
+    }
+    public void updateCompany(Company company){
+        companies.removeIf(company1 -> company1.getId()==company.getId());
+        companies.add(company);
+    }
+
     public void addCompany(Company company) {
         company.setId(id++);
         companies.add(company);

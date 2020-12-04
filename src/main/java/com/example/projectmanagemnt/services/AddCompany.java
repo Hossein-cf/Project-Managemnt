@@ -14,16 +14,21 @@ public class AddCompany  {
 
     }
     @GetMapping(path = "/companyGet",consumes = "application/json",produces = "application/json")
-   public void get(@RequestBody Company company){
-        System.out.println(company.getId());
-        dbHelper.getCompany(company.getId());
+   public Company get(@RequestBody long ID){
+        System.out.println(ID);
+        Company company;
+        company=dbHelper.getCompany(ID);
+        return company;
+
     }
     @DeleteMapping(path = "/companyDelete",consumes = "application/json",produces = "application/json")
     public void delete(@RequestBody Company company){
         System.out.println(company.getId());
+        dbHelper.deleteCompany(company);
     }
     @PutMapping(path = "/companyPut",consumes = "application/json",produces = "application/json")
     public void update(@RequestBody Company company){
         System.out.println(company.getId());
+        dbHelper.updateCompany(company);
     }
 }
