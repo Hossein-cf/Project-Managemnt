@@ -244,6 +244,12 @@ public class DB {
 
     //
 //project
+
+    public void deleteProject(Project project){
+        companies.removeIf(project1 -> project1.getId()==project.getId());
+
+    }
+
     public void addProject(Project project) {
         project.setId(id++);
         projects.add(project);
@@ -273,6 +279,11 @@ public class DB {
     }
 
     //part
+    public void deletePart(Part part){
+        companies.removeIf(part1 -> part1.getId()==part.getId());
+
+    }
+
     public void addPart(Part part) {
         part.setId(id++);
         parts.add(part);
