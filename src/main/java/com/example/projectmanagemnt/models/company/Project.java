@@ -2,6 +2,7 @@ package com.example.projectmanagemnt.models.company;
 
 import com.example.projectmanagemnt.models.Task;
 import com.example.projectmanagemnt.models.Ticket;
+import com.example.projectmanagemnt.models.enums.ProjectCondition;
 import lombok.Data;
 
 import java.util.Date;
@@ -39,7 +40,5 @@ public class Project {
 •	project budget
 •	میزان رضایت
 */
-}
-enum  ProjectCondition {
 }
 

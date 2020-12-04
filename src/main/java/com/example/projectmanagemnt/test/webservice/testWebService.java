@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class testWebService {
     @GetMapping("/test")
     public String test (){
-        return "test";
+        return "uploadview";
     }
 
 }

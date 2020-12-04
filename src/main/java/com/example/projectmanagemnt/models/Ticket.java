@@ -1,5 +1,7 @@
 package com.example.projectmanagemnt.models;
 
+import com.example.projectmanagemnt.models.enums.TicketCondition;
+import com.example.projectmanagemnt.models.enums.TicketPriority;
 import lombok.Data;
 
 import java.util.Date;
@@ -11,10 +13,13 @@ public class Ticket {
     private long companyId;
     private long partId;
     private String title;
-    private Priority priority;
+    private TicketPriority ticketPriority;
     private String description;
-    private long generatorId;
     private long destinationId;
+    private long generatorId;
+    private long EmployeeId;
+    private long CustomerId;
+    private long SystemId;
     // (to) (میتوانیم درخواست خود را به بخش یا یک نفر مخصوص ارسال کنیم)
 //    If send to admin just select the admin address else if send to part just select the part else if send to agent just select the part > agent id
 //    If we want send ticket to agent and we want to does not show to part
@@ -28,9 +33,4 @@ public class Ticket {
 
 
 }
-enum TicketCondition{
 
-}
-enum Priority {
-
-}
