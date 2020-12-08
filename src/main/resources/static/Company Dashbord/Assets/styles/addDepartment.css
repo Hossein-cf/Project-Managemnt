@@ -1,0 +1,51 @@
+.dashbord-container{
+    width: 96vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    /* background-color: black; */
+}
+.Add-department-container{
+    display: flex;
+    /* justify-content: center; */
+    padding: 3rem 3rem;
+    flex-direction: column;
+    width: 80vw;
+    height: 91vh;
+    background-color: white;
+    box-shadow: 0 0 25px 5px rgba(0, 0, 0, 0.07);
+}
+.customize-form{
+    width: 50rem;
+}
+.custom-row{
+    display: flex;
+    justify-content: center;
+}
+.form-row{
+    margin: 1rem 0;
+}
+
+.titleContainer{
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+}
+.titleContainer h2{
+    margin-top: 2.5rem;
+    color: rgb(141, 141, 224);
+}
+.submit-btn-container{
+    display: flex;
+    justify-content: center;
+}
+
+.select2-container--default .select2-selection--multiple {
+    width: 500px;
+
+}
+.rtl-direction{
+    direction: rtl;
+}

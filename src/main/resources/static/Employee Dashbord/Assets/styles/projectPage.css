@@ -1,0 +1,160 @@
+.dashbord-container{
+    width: 96vw;
+    height: 60rem;
+
+    margin: 5rem 0;
+ 
+}
+
+.main-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 3rem 3rem;
+    width: 90vw;
+    height: 60rem;
+    background-color: white;
+    box-shadow: 0 0 25px 5px rgba(0, 0, 0, 0.07);
+}
+.prject-and-members{
+    width: 100%;
+    height: 52%;
+    display: flex;
+    justify-content: space-between;
+}
+.project{
+    width: 68%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: white;
+    box-shadow: 0 0 25px 5px rgba(0, 0, 0, 0.07);
+}
+
+
+.title{
+    width: 100%;
+    height: 20%;
+    padding: 10px;
+}
+.project-title{
+    padding: 10px;
+    background-color: rgb(236, 227, 202);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.right-side{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.subject span{
+    font-size: 16px;
+}
+.body{
+    width: 100%;
+    height: 62%;
+    padding: 10px 20px;
+}
+.project-text{
+    width: 100%;
+    height: 100%;
+
+}
+.project-text p{
+    text-align: right;
+}
+.project-date{
+    width: 100%;
+    height: 18%;
+
+}
+
+
+.members{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: white;
+    box-shadow: 0 0 25px 5px rgba(0, 0, 0, 0.07);
+}
+.members-title{
+    width: 100%;
+    height: 13%;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 20px;
+}
+.fix-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.members-name{
+    width: 100%;
+    height: 87%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.files-comments-tasks{
+    width: 100%;
+    height: 45%;
+    display: flex;
+    justify-content: space-between;
+}
+.tasks{
+    width: 39%;
+    height: 100%;
+    background-color: white;
+    box-shadow: 0 0 25px 5px rgba(0, 0, 0, 0.07);
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.files{
+    width: 29%;
+    height: 100%;
+    background-color: white;
+    box-shadow: 0 0 25px 5px rgba(0, 0, 0, 0.07);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.comments{
+    width: 30%;
+    height: 100%;
+    background-color: white;
+    box-shadow: 0 0 25px 5px rgba(0, 0, 0, 0.07);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+
+.task-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+    background-color: aqua;
+}
+.rtl-table{
+    direction: rtl;
+}
+.rtl-table tr{
+    text-align: center;
+}
+.no-data{
+    margin-bottom: 1rem;
+}

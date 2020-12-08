@@ -1,0 +1,93 @@
+
+.dashbord-container{
+    width: 96vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    /* background-color: black; */
+}
+.main-container{
+    display: flex;
+    justify-content: space-between;
+    padding: 3rem 3rem;
+    width: 80vw;
+    height: 91vh;
+    background-color: white;
+    box-shadow: 0 0 25px 5px rgba(0, 0, 0, 0.07);
+}
+.activities-container{
+    width: 20vw;
+    height: 80vh;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 25px 5px rgba(0, 0, 0, 0.07);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1rem 0.5rem;
+}
+.no-data{
+    color: rgb(128, 136, 143);
+    font-size: 12px;
+    margin-top: 3rem;
+}
+.more-infos-container{
+    width: 50vw;
+    height: 80vh;
+    background-color: white;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.activities-titles{
+    
+}
+.cards-container{
+    width: 50vw;
+    height: 25vh;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* cards */
+.satisfication-at-all,.in-progress-projects,.receiving-emails,.my-new-tickets{
+    width: 23vh;
+    height: 22vh;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 25px 5px rgba(0, 0, 0, 0.07);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+.projects-list{
+    width: 50vw;
+    height: 25vh;
+    background-color: rgb(236, 226, 226);
+    box-shadow: 0 0 25px 5px rgba(0, 0, 0, 0.07);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1rem 0.5rem;
+}
+.recent-reports{
+    width: 50vw;
+    height: 28vh;
+    background-color: rgb(236, 226, 226);
+    box-shadow: 0 0 25px 5px rgba(0, 0, 0, 0.07);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1rem 0.5rem;
+}
+.title{
+    font-size: 14px;
+}

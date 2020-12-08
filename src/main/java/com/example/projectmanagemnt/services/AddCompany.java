@@ -4,12 +4,12 @@ import com.example.projectmanagemnt.DBHelper.DB;
 import com.example.projectmanagemnt.models.company.Company;
 
 import org.springframework.web.bind.annotation.*;
-
+@RestController
 public class AddCompany  {
     DB dbHelper = new DB();
     @PostMapping(path = "/companyPost",consumes = "application/json",produces = "application/json")
     public void add(@RequestBody Company company){
-        System.out.println(company.getId());
+        System.out.println(company.getName());
         dbHelper.addCompany(company);
 
     }

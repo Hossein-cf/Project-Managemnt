@@ -1,0 +1,11 @@
+.rtl-table{
+    direction: rtl;
+}
+.table-container{
+    width: 50vw;
+    margin-top: 3rem;
+}
+
+.rtl-table tr{
+    text-align: right;
+}

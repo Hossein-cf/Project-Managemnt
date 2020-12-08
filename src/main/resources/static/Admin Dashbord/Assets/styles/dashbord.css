@@ -1,0 +1,129 @@
+
+.dashbord-container{
+    width: 96vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    /* background-color: black; */
+}
+.main-container{
+    display: flex;
+    justify-content: space-between;
+    padding: 3rem 3rem;
+    width: 80vw;
+    height: 91vh;
+    background-color: white;
+    box-shadow: 0 0 25px 5px rgba(0, 0, 0, 0.07);
+}
+
+
+.admin-info-and-reports{
+    width: 34%;
+    height: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.infos{
+    width: 100%;
+    height: 39%;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 25px 5px rgba(0, 0, 0, 0.07);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.names{
+    width: 100%;
+    height: 39%;
+    background-color: #e2ddfc;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 0 20px;
+}
+.description{
+    width: 100%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+}
+.admin-image-container{
+    background-image: url(../images/default-user-image.png) ;
+    background-size: cover;
+    width: 90px;
+    height: 90px;
+    margin-top: 2rem;
+    margin-right: 13rem;
+    border-radius: 50px;
+    position: absolute;
+    border: 1px rgb(161, 150, 150) solid;
+}
+.reports{
+    width: 100%;
+    height: 59%;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 25px 5px rgba(0, 0, 0, 0.07);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+}
+
+
+.cards-and-projects-list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 64%;
+    height: 100%;
+
+}
+.cards{
+    width: 100%;
+    height: 32%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.new-emails,.new-tickets,.employees-number,.customers-number{
+    width: 22%;
+    height: 80%;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 25px 5px rgba(0, 0, 0, 0.07);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+.projects-list{
+    width: 100%;
+    height: 66%;
+    background-color: #e2ddfc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+.title{
+    font-size: 14px;
+}
+.no-data{
+    font-size: 12px;
+}
+.no-data span{
+    color: rgb(114, 111, 107);
+}

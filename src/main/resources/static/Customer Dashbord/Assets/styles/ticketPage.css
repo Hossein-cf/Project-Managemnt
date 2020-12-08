@@ -1,0 +1,138 @@
+main{
+    width: 96vw;
+    
+
+    
+    /* background-color: rebeccapurple; */
+}
+
+.item-container-ts{
+    margin-top: 0rem;
+    width: 95vw;
+    height: 70rem;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    padding: 10px 0px;
+}
+.ticket-infos{
+    padding: 10px;
+    margin-top: 0rem;
+    width: 38vw;
+    height: 33rem;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 25px 5px rgba(0, 0, 0, 0.07);
+    position: sticky;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.detailes{
+    width: 100%;
+    height: 39%;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 25px 5px rgba(0, 0, 0, 0.07);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.info-title{
+    width: 100%;
+    height: 20%;
+    background-color: rgb(245, 237, 214);
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+}
+.descriptions{
+    width: 100%;
+    height: 80%;
+
+    display: flex;
+    justify-content: flex-end;
+    
+}
+.detailes-clm{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 50%;
+}
+.detailes-clm div{
+    margin: 15px 50px;
+    width: 100%;
+    text-align: right;
+}
+.second,.first{
+    display: flex;
+    text-align: right;
+}
+
+
+.rate-this-tcket{
+    width: 100%;
+    height: 59%;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 25px 5px rgba(0, 0, 0, 0.07);
+}
+.dialog-list{
+    width: 45vw;
+    height: 33rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 25px 5px rgba(0, 0, 0, 0.07);
+    padding-bottom: 2rem;
+    overflow: scroll;
+}
+
+
+.ticket-container{
+    margin-top: 1rem;
+    width: 85%;
+    height: 25rem;
+    border: 1px black dashed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    
+    
+}
+.ticket-title{
+    width: 100%;
+    height: 4rem;
+    background-color: rgb(245, 237, 214);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 5px 20px;
+}
+.ticket-body{
+    width: 100%;
+    height: 19rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.ticket-text{
+    width: 95%;
+    height: 24rem;
+    
+}
+.ticket-text p{
+    text-align: right;
+}
+.replay-nav{
+    width: 100%;
+    height: 2.5rem;
+    background-color: rebeccapurple;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

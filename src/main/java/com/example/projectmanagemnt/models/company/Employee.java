@@ -13,7 +13,7 @@ public class Employee {
     private String name;
     private String lastName;
     private String nationalNumber;
-    private String role;
+    private List<String> roleList;
     private String email;
     private String phoneNumber;
     private List<Ticket> tickets;

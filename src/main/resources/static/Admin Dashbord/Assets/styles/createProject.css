@@ -1,0 +1,38 @@
+.main-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 3rem;
+    width: 90vw;
+    height: 91vh;
+    background-color: white;
+    box-shadow: 0 0 25px 5px rgba(0, 0, 0, 0.07);
+}
+.custom-row{
+    display: flex;
+    justify-content: center;
+}
+.customize-form{
+    width: 38rem;
+}
+.customize-text-area{
+    text-align: right;
+}
+.page-title{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+
+}
+.title h1{
+    font-size: 2rem;
+}
+.upload-file-container,.dp-fix-style{
+    direction: rtl;
+}
+
+.submit-btn{
+    display: flex;
+    justify-content: center;
+}

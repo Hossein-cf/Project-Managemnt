@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../../../static/System%20Dashbord/Assets/styles/test.css">
+    <title>Document</title>
+</head>
+<body>
+    <select  class="js-example-basic-multiple size" name="states[]" multiple="multiple">
+        <option  value="AL">فنی</option>
+        <option  value="WY">مالی</option>
+        <option  value="WY">پشتیبانی مشتریان</option>
+    </select>
+  
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+    <script > 
+        $(document).ready(function() {
+            $('.js-example-basic-multiple').select2();
+        });
+    </script>
+</body>
+</html>
