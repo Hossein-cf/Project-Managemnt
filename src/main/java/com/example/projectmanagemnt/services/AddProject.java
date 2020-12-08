@@ -5,6 +5,9 @@ import com.example.projectmanagemnt.DBHelper.DB;
 import com.example.projectmanagemnt.models.company.Project;
 import org.springframework.web.bind.annotation.*;
 
+
+import java.util.List;
+
 public class AddProject {
     DB dbHelper = new DB();
     @PostMapping(path = "/AddProjectPost",consumes = "application/json",produces = "application/json")
@@ -13,17 +16,17 @@ public class AddProject {
         dbHelper.addProject(project);
     }
 
-//    @GetMapping(path = "/AddProjectGetProjectByCustomerId",consumes = "application/json",produces = "application/json")
-//    public Project get(@RequestBody long ID){
-//        System.out.println(ID);
-//        return dbHelper.getProjectByCustomerId(ID);
-//    }
-//
-//    @GetMapping(path = "/AddProjectGetProjectForCompany",consumes = "application/json",produces = "application/json")
-//    public Project get(@RequestBody long ID){
-//        System.out.println(ID);
-//        return dbHelper.getProjectForCompany(ID);
-//    }
+    @GetMapping(path = "/AddProjectGetProjectByCustomerId",consumes = "application/json",produces = "application/json")
+    public Project getByCustomerId(@RequestBody long ID){
+        System.out.println(ID);
+        return dbHelper.getProjectByCustomerId(ID);
+    }
+
+    @GetMapping(path = "/AddProjectGetProjectForCompany",consumes = "application/json",produces = "application/json")
+    public List getProjectForCompany(@RequestBody long ID){
+        System.out.println(ID);
+        return dbHelper.getProjectForCompany(ID);
+    }
 
     @DeleteMapping(path = "/AddProjectDelete",consumes = "application/json",produces = "application/json")
     public void delete(@RequestBody Project project){
