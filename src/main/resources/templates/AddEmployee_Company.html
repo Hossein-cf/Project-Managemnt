@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+   <!-- <script src="https://unpkg.com/boxicons@latest/dist/boxicons.js"></script> -->
+    <link rel="stylesheet" href="../static/Company%20Dashbord/Assets/styles/bootstrap/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+
+
+    <link rel="stylesheet" href="../static/Company%20Dashbord/Assets/styles/main.css">
+    <link rel="stylesheet" href="../static/Company%20Dashbord/Assets/styles/addDepartment.css">
+
+    <title>Dashbord</title>
+</head>
+<body >
+
+    <!-- ===== header ======  --> 
+
+    <header class="header" id="header">
+        <div class="header-nav"> 
+            <div class="user-icone__date">
+                <div class="user-icone">
+                    <ion-icon name="person"></ion-icon>
+                    <ion-icon name="chevron-down-outline" class="chevron"></ion-icon>
+                </div>
+                <div class="date">
+                    <span id="date">تاریخ امروز : سه شنبه 8 آذر</span>
+                </div>
+            </div>
+            
+            <div class="search-bar">
+
+                <a id="S-btn"  >
+                    <ion-icon name="search"></ion-icon>
+                </a>
+                <div class="input-group ">
+                   
+                    <div class="input-group-prepend" data-toggle="tooltip" data-placement="left" title=" نوع جست وجو">
+                      <button  id="search-btn"  class="btn  " type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <ion-icon name="chevron-down-circle" ></ion-icon>
+                      </button>
+                      <div class="dropdown-menu">
+                          <div class="dropdown-item combo-item">
+                            <a class="" href="#">تیکت ها</a>
+                            <input  type="checkbox" >
+                          </div>
+                          <div class="dropdown-item combo-item">
+                            <a class="" href="#">کاربران</a>
+                            <input  type="checkbox" >
+                          </div>
+                          <div class="dropdown-item combo-item">
+                            <a class="" href="#">شرکت هاا</a>
+                            <input  type="checkbox" >
+                          </div>
+                      </div>
+                    </div>
+                    <input id="search-input" type="text" class="form-control" aria-label="Text input with dropdown button" placeholder="جست و جو">
+                </div>
+            </div>
+            <div class="options">
+                <div class="fast-acsses">
+                    <div class="dropdown">
+                        
+                        <div class="dropdown" data-toggle="tooltip" data-placement="left" title="دسترسی سریع">
+                          
+                            <ion-icon name="add-circle" data-toggle="dropdown"  ></ion-icon>
+                            
+                            <ul class="dropdown-menu" id="options-dropdown">
+                              <li class="dropdown-item"><a href="#">ایجاد جلسه</a></li>
+                              <li class="dropdown-item"><a href="#">ایمیل</a></li>
+                              <li class="dropdown-item"><a href="#">ایجاد تیکت</a> </li>
+                              <li class="dropdown-item"><a href="#"> ایجاد دسترسی</a></li>
+                              <li class="dropdown-item"><a href="#"> افزودن کاربر </a></li>
+                            </ul>
+                        </div>
+                      </div>
+                            
+                        
+                          
+                </div>
+                <div class="" data-toggle="tooltip" data-placement="bottom" title="یادآوری">
+                    <ion-icon name="volume-low"></ion-icon>
+                </div>
+                <div data-toggle="tooltip" data-placement="bottom" title=" اعلان ها">
+                    <ion-icon name="notifications" ></ion-icon>
+                    
+                </div>
+               
+                
+            </div>
+        </div>
+        <div class="header__toggle">
+            <i class='bx bx-menu' id="header-toggle"></i>
+        </div>
+
+
+    </header>
+
+    <main>
+
+        
+        <!-- ===== side bar ======  -->
+        <div class="navbar">
+            <nav>
+                <div class="side-bar">
+                    <div class="dashbord">
+                        <a href="Dashbord_Company.html" class="nav__link ">
+
+                            
+                            <div  >
+                                <span  class="nav__name" > داشبورد</span>
+
+                            </div>
+                            <div >
+                                <i  class='bx bx-grid-alt nav__icon' data-toggle="tooltip" data-placement="left" title="داشبورد"  ></i>
+                                <!-- <box-icon  type='solid' name='dashboard'></box-icon> -->
+                            </div>
+                            
+                        </a>
+                    </div>
+                    <div class="Users">
+                        <a href="#" class="nav__link" >
+
+                            
+                            
+                            <div class="dropdown"  id="users-dropdown" class="test" >
+                                <div  >
+                                    <ion-icon name="chevron-down-outline"   ></ion-icon>
+                                    
+                                </div>
+                                
+                                <span class="nav__name" >بخش ها</span>
+                                
+                            </div>
+                            
+                            
+                            <div>
+                                <i class='bx bx-user nav__icon'  data-toggle="tooltip" data-placement="left" title="کاربران" ></i>
+                            </div>
+                            
+                            
+                            
+                        </a>
+                    </div>
+                    <div class="dropdown-container">
+                        <a href="Departments_Company.html" class="hidden-dp-1">دپارتمان ها</a>
+                        <a href="AddDepartment_Company.html" class="hidden-dp-1" >ایجاد دپارتمان</a>
+                        <a href="AddEmployee_Company.html" class="hidden-dp-1"> افزودن کارمند</a>
+                    </div>
+                   
+                    <div class="Acsses">
+                        <a href="customers_Company.html" class="nav__link">
+                            <div id="acsses-dropdown">
+                                <!-- <ion-icon name="chevron-down-outline" ></ion-icon> -->
+                                
+                                    <span class="nav__name">مشتریان  </span>
+                                
+                            </div>
+                            
+                            <div>
+                                <i class='bx bx-folder nav__icon' data-toggle="tooltip" data-placement="left" title="دسترسی ها" ></i>
+
+                            </div>
+                        </a>
+                    </div>
+                    <!-- <div class="dropdown-container">
+                        <a href="AddCompany_System.html" class="hidden-dp-2"> درخواست سیستم </a>
+                        <a  class="hidden-dp-2">  درخواست تمدید </a>
+                    </div> -->
+                    <div class="Messages">
+                        <a href="TicketsList_Company.html" class="nav__link">
+                             <div >
+                                <span class="nav__name">تیکت ها</span>
+                             </div>
+                             <div>
+                                <i class='bx bx-message-square-detail nav__icon' data-toggle="tooltip" data-placement="left" title="تیکت ها" ></i>
+
+                             </div>
+                        </a>
+                    </div>
+                    <div class="">
+                        <a href="#" class="nav__link">
+                            <div class="test">
+                                <span class="nav__name">  صندوق ایمیل</span>
+
+                            </div>
+                            <div>
+                                <i class='bx bx-bookmark nav__icon' data-toggle="tooltip" data-placement="left" title="ایمیل ها" ></i>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="Reports">
+                        <a href="#" class="nav__link">
+                            <div >
+                                <span class="nav__name">گزارش ها</span>
+
+                            </div>
+                            <div>
+                                <i class='bx bx-bar-chart-alt-2 nav__icon' data-toggle="tooltip" data-placement="left" title="گزارش ها"></i>
+
+                            </div>
+
+                        </a>
+                    </div>
+                    <div class="log-out">
+                        <a href="#" class="nav__link">
+                            <span class="nav__name">خروج</span>
+                            <i class='bx bx-log-out nav__icon' data-toggle="tooltip" data-placement="left" title="خروج از سیستم"></i>
+                            
+                        </a>
+                    </div>
+                </div>
+
+               
+            </nav>
+
+
+    
+        </div>
+
+    </main>
+    <!-- ===== Page content ======  -->
+    <section class="dashbord-container">
+       <div class="Add-department-container">
+            <div class="titleContainer">
+                <h2>افزودن کارمند جدید</h2>
+            </div>
+            <div class="custom-row">
+                <form class="customize-form " action="" method="post">
+                    <div class="form-row ">
+                        <div class="form-group col-md-3">
+                            <input type="" class="form-control text-right" id="NumberOfAdmins" placeholder=" نام پدر">
+                       </div>
+                        <div class="form-group col-md-3">
+                            <input type="" class="form-control text-right" id="NumberOfAdmins" placeholder=" کد ملی ">
+                       </div>
+                        <div class="form-group col-md-3">
+                            <input type="" class="form-control text-right" id="departmentName" placeholder=" نام خانوادگی">
+                       </div>
+                       <div class="form-group col-md-3">
+                            <input type="" class="form-control text-right" id="departmentName" placeholder=" نام ">
+                        </div>
+                       
+                       
+                    </div>
+                    <div class="form-row flex-md-row-reverse ">
+                        <div class="form-group col-md-3">
+                            <input type="email" class="form-control text-right" id="Email" placeholder="   محل تولد">
+                       </div>
+                       <div class="form-group col-md-4">
+                            <input type="email" class="form-control text-right" id="Email" placeholder="   تلفن ثابت ">
+                       </div>
+                       <div class="form-group col-md-5">
+                            <input type="email" class="form-control text-right" id="Email" placeholder=" تلفن همراه">
+                        </div>
+                        
+                    </div>
+                    <div class="form-row  ">
+                        <div class="form-group col-md-4">
+                            <input type="email" class="form-control text-right" id="Email" placeholder="محل تولد">
+                       </div>
+                       <div class="form-group col-md-8">
+                            <input type="email" class="form-control text-right" id="Email" placeholder="آدرس محل سکونت  ">
+                       </div>
+                       
+                        
+                    </div>
+                    <!-- <div class="form-row justify-content-end ">
+                        
+                       <div class="form-group col-md-8 ">
+                        <select   class="js-example-placeholder-multiple form-control js-states" name="states[]" multiple="multiple">
+                            <option  value="AL">XD</option>
+                            <option  value="WY">Figma</option>
+                            <option  value="WY">React js</option>
+                            <option  value="WY">Vue js</option>
+                            <option  value="WY">Angular js</option>
+                        </select>
+                      </div>
+                      <div class="form-group col-md-4">
+                        <select class="form-control rtl-direction" id="exampleFormControlSelect1">
+                            <option>شغل در شرکت</option>
+                            <option>UI/UX Designer</option>
+                            <option>فرانت اند کار</option>
+                            <option>بک اند کار</option>
+                            <option>مختصص دیتا بیس</option>
+                            <option>مدیر پروژه</option>
+                            <option>توسعه دهنده اندروید</option>
+                            <option>توسعه دهنده ios</option>
+                            <option>تحلیل گر</option>
+                            <option>ورد پرس کار</option>
+                          </select>
+                        </div>
+                        
+                    </div> -->
+                    <div class="submit-btn-container ">
+                        <button  type="submit" class="btn btn-primary " > ثبت اطلاعات</button>
+                    </div>
+                   
+                </form>
+            </div>
+            
+       </div>
+    </section>
+
+    <!-- ===== user profile ======  -->
+    <div class="user-infos">
+        <div class="image-container">
+                <div class="profile-image">
+
+                </div>
+        </div>
+        <div class="information">
+            <span>
+                System Admin
+            </span>
+            <span>
+                Systemsupport@gmail.com
+            </span>
+        </div>
+        <div class="user-options">
+            <a href="#">پروفایل</a>
+            <a href="#">تنظیمات</a>
+        </div>
+    </div>
+    <!-- =======Modals===== -->
+    <div class="reminder-modal">
+
+    </div>
+    <div class="notification-modal">
+
+    </div>
+
+    
+    
+
+
+
+
+    
+    <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+    <script src="../static/Company%20Dashbord/Assets/scripts/app.js"></script>
+
+    <script src="../static/Company%20Dashbord/Assets/scripts/moment.js"></script>
+    <script src="../static/Company%20Dashbord/Assets/scripts/jalali-moment.js"></script>
+
+    <script src="../static/Company%20Dashbord/Assets/scripts/jquery-3.5.1.slim.min.js"></script>
+    <script src="../static/Company%20Dashbord/Assets/scripts/bootstrap/bootstrap.bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+    <script>
+        $(document).ready(function(){
+          $('[data-toggle="tooltip"]').tooltip();   
+        });
+        $(".js-example-placeholder-multiple").select2({
+            dir: "rtl",
+            placeholder: "توانایی ها و مهارت ها"
+        }); 
+       
+        
+
+        document.querySelector('#date').innerHTML = `${ moment().locale('fa').format('MMMM Do YYYY, h:mm a')}`
+        
+    </script>
+
+</body>
+</html>

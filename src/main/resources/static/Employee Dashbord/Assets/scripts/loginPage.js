@@ -6,7 +6,7 @@ loginBtn.addEventListener('click' , ()=>{
     const passWord = document.querySelector('#passWord').value
 
     if(userName === 'admin' && passWord ==='admin'){
-        // window.location.href = '../Pages/Dashbord.html'
+        // window.location.href = '../Pages/Dashbord_Company.html'
     }
 })
 

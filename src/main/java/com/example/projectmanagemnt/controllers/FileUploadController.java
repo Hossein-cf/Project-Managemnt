@@ -15,11 +15,11 @@ import java.nio.file.Paths;
 public class FileUploadController {
     public static String uploadDirectory = System.getProperty("user.dir") + "/src/main/resources/static/uploads";
 
-    @RequestMapping("/")
-    public String uploadPage(Model model) {
-
-        return "uploadview";
-    }
+//    @RequestMapping("/")
+//    public String uploadPage(Model model) {
+//
+//        return "uploadview";
+//    }
 
     @RequestMapping("/upload")
     public String upload(Model model, @RequestParam("files") MultipartFile files) {

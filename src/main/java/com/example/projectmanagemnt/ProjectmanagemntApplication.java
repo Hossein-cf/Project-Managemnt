@@ -11,6 +11,7 @@ import java.io.File;
 public class ProjectmanagemntApplication {
 
     public static void main(String[] args) {
+        System.out.println( System.getProperty("user.dir") + "/src/main/resources/templates/company%20dashboard/Pages/login_System.html");
         new File(FileUploadController.uploadDirectory).mkdir();
         SpringApplication.run(ProjectmanagemntApplication.class, args);
     }
