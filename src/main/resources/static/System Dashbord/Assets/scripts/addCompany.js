@@ -9,11 +9,11 @@ document.querySelector('.submit').addEventListener('click',(e)=>{
     });
     var json = JSON.stringify(object);
     console.log(json)
-
-    let user = {
-        name: 'John',
-        Email: 'Smith'
-    };
+    //
+    // let user = {
+    //     name: 'John',
+    //     Email: 'Smith'
+    // };
 
     /*  private long id;
     private String name;
@@ -31,12 +31,19 @@ document.querySelector('.submit').addEventListener('click',(e)=>{
         headers: {
             'Content-Type': 'application/json;charset=utf-8'
         },
-        body: object
+        body: json
     })
         .then(response => response.json())
         .then(res => console.log(res))
 
-    // window.location.href = '../Pages/Dashbord_Company.html'
+    let change = ()=>{
+        window.location.href = 'http://localhost:8086/systemDashboard'
+    }
+
+
+    setTimeout(change,1000)
+    //window.location.href = 'http://localhost:8086/systemDashboard'
+
 })
 
 

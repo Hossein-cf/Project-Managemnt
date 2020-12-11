@@ -9,6 +9,9 @@ document.querySelector('.header__toggle').addEventListener('click' , ()=>{
 
     
 })
+
+//initialize cards
+let active_companies =document.querySelector('#number-of-active-companies')
  
 // user profile modal
 document.querySelector('.chevron').addEventListener('click' , ()=>{
@@ -31,12 +34,22 @@ document.querySelector('#acsses-dropdown').addEventListener('click' , ()=>{
 })
 
 
-moment().locale('fa').format('YYYY/M/D');
 
 
 
 
-
+// fetch('http://localhost:8086/companySize')
+//     .then(response => response.json())
+//     .then(res => console.log(res))
+fetch('http://localhost:8086/companySize')
+    .then(response =>{
+      console.log(response)
+      return response.json()
+    } )
+    .then(res =>{
+        console.log(res)
+        active_companies.innerHTML = res
+    } )
 
 
 

@@ -8,15 +8,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class MainController {
 
     @RequestMapping("/")
-    public String index (){
+    public String index() {
         return "login_System";
     }
+
     @RequestMapping("/systemDashboard")
-    public String goToSystemDashboard (){
+    public String goToSystemDashboard() {
         return "Dashbord_System";
     }
+
     @RequestMapping("/AddCompany_System")
-    public String goToAddCompany_System (){
+    public String goToAddCompany_System() {
         return "AddCompany_System";
     }
 }
