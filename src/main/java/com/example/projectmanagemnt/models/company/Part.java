@@ -12,6 +12,7 @@ public class Part {
     private String name;
     private long adminId;
     private String description;
+    private String createTime;
     private PartActivity partActivity;
     private List<Employee> employeesForPart;
     private List<Ticket> tickets;

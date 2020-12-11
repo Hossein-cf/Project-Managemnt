@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
    <!-- <script src="https://unpkg.com/boxicons@latest/dist/boxicons.js"></script> -->
-    <link rel="stylesheet" href="../static/Company%20Dashbord/Assets/styles/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="Company%20Dashbord/Assets/styles/bootstrap/bootstrap.min.css">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
 
 
@@ -106,7 +106,7 @@
             <nav>
                 <div class="side-bar">
                     <div class="dashbord">
-                        <a href="Dashbord_Company.html" class="nav__link ">
+                        <a href="/Dashbord_Company" class="nav__link ">
 
                             
                             <div  >
@@ -125,7 +125,7 @@
 
                             
                             
-                            <div class="dropdown"  id="users-dropdown" class="test" >
+                            <div class="dropdown"  id="users-dropdown">
                                 <div  >
                                     <ion-icon name="chevron-down-outline"   ></ion-icon>
                                     
@@ -145,13 +145,13 @@
                         </a>
                     </div>
                     <div class="dropdown-container">
-                        <a href="Departments_Company.html" class="hidden-dp-1">دپارتمان ها</a>
-                        <a href="AddDepartment_Company.html" class="hidden-dp-1" >ایجاد دپارتمان</a>
-                        <a href="AddEmployee_Company.html" class="hidden-dp-1"> افزودن کارمند</a>
+                        <a href="/Departments_Company" class="hidden-dp-1">دپارتمان ها</a>
+                        <a href="/AddDepartment_Company" class="hidden-dp-1" >ایجاد دپارتمان</a>
+                        <a href="#" class="hidden-dp-1"> افزودن کارمند</a>
                     </div>
                    
                     <div class="Acsses">
-                        <a href="customers_Company.html" class="nav__link">
+                        <a href="/customers_Company" class="nav__link">
                             <div id="acsses-dropdown">
                                 <!-- <ion-icon name="chevron-down-outline" ></ion-icon> -->
                                 
@@ -170,7 +170,7 @@
                         <a  class="hidden-dp-2">  درخواست تمدید </a>
                     </div> -->
                     <div class="Messages">
-                        <a href="TicketsList_Company.html" class="nav__link">
+                        <a href="/TicketsList_Company" class="nav__link">
                              <div >
                                 <span class="nav__name">تیکت ها</span>
                              </div>
@@ -229,44 +229,45 @@
                 <h2>افزودن کارمند جدید</h2>
             </div>
             <div class="custom-row">
-                <form class="customize-form " action="" method="post">
+                <form class="customize-form " id="addEmployee" action="" method="post">
                     <div class="form-row ">
+
                         <div class="form-group col-md-3">
-                            <input type="" class="form-control text-right" id="NumberOfAdmins" placeholder=" نام پدر">
+                            <input type="text" class="form-control text-right" id="fatherName" name="fatherName" placeholder=" نام پدر">
                        </div>
                         <div class="form-group col-md-3">
-                            <input type="" class="form-control text-right" id="NumberOfAdmins" placeholder=" کد ملی ">
+                            <input type="number" class="form-control text-right" id="nationalNumber" name="nationalNumber" placeholder=" کد ملی ">
                        </div>
                         <div class="form-group col-md-3">
-                            <input type="" class="form-control text-right" id="departmentName" placeholder=" نام خانوادگی">
+                            <input type="text" class="form-control text-right" id="lastName" name="lastName" placeholder=" نام خانوادگی">
                        </div>
                        <div class="form-group col-md-3">
-                            <input type="" class="form-control text-right" id="departmentName" placeholder=" نام ">
+                            <input type="text" class="form-control text-right" id="name" name="name" placeholder=" نام ">
                         </div>
                        
                        
                     </div>
                     <div class="form-row flex-md-row-reverse ">
                         <div class="form-group col-md-3">
-                            <input type="email" class="form-control text-right" id="Email" placeholder="   محل تولد">
+                            <input type="text" class="form-control text-right" id="bornPlace" name="bornPlace" placeholder="   محل تولد">
                        </div>
                        <div class="form-group col-md-4">
-                            <input type="email" class="form-control text-right" id="Email" placeholder="   تلفن ثابت ">
+                            <input type="tel" class="form-control text-right" id="homePhoneNumber" name="homePhoneNumber" placeholder="   تلفن ثابت ">
                        </div>
                        <div class="form-group col-md-5">
-                            <input type="email" class="form-control text-right" id="Email" placeholder=" تلفن همراه">
+                            <input type="tel" class="form-control text-right" id="phoneNumber" name="phoneNumber" placeholder=" تلفن همراه">
                         </div>
                         
                     </div>
                     <div class="form-row  ">
                         <div class="form-group col-md-4">
-                            <input type="email" class="form-control text-right" id="Email" placeholder="محل تولد">
+                            <input type="email" class="form-control text-right" id="email" name="email" placeholder=" ایمیل">
                        </div>
                        <div class="form-group col-md-8">
-                            <input type="email" class="form-control text-right" id="Email" placeholder="آدرس محل سکونت  ">
+                            <input type="text" class="form-control text-right" id="address" name="address" placeholder="آدرس محل سکونت  ">
                        </div>
                        
-                        
+
                     </div>
                     <!-- <div class="form-row justify-content-end ">
                         
@@ -296,7 +297,7 @@
                         
                     </div> -->
                     <div class="submit-btn-container ">
-                        <button  type="submit" class="btn btn-primary " > ثبت اطلاعات</button>
+                        <button  type="" id="submit" class="btn btn-primary " > ثبت اطلاعات</button>
                     </div>
                    
                 </form>
@@ -342,6 +343,7 @@
     
     <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
     <script src="Company%20Dashbord/Assets/scripts/app.js"></script>
+    <script src="Company%20Dashbord/Assets/scripts/AddEmployee.js"></script>
 
     <script src="Company%20Dashbord/Assets/scripts/moment.js"></script>
     <script src="Company%20Dashbord/Assets/scripts/jalali-moment.js"></script>

@@ -9,11 +9,11 @@ import java.util.List;
 public class Company {
     private long id;
     private String name;
-    private String Username;
-    private String Password;
-    private String Email;
-    private String Phone;
-    private String Address;
+    private String username;
+    private String password;
+    private String email;
+    private String phone;
+    private String address;
     private String createTime;
     private String validityDate;
     private List<Part> parts;

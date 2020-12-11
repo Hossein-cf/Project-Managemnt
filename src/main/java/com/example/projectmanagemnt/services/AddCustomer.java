@@ -5,6 +5,7 @@ import com.example.projectmanagemnt.DBHelper.DB;
 
 import com.example.projectmanagemnt.models.company.Customer;
 import org.springframework.web.bind.annotation.*;
+@RestController
 
 public class AddCustomer {
 
@@ -12,7 +13,7 @@ public class AddCustomer {
 
     @PostMapping(path = "/customerPost",consumes = "application/json",produces = "application/json")
     public void add(@RequestBody Customer customer){
-        System.out.println(customer.getCompanyId());
+        System.out.println(customer.getPassword());
         dbHelper.addCustomer(customer);
     }
 

@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 
 public class DB {
-    static long id;
+   public static long id;
     public static LinkedList<ReceiveEmailModel> emails = new LinkedList<>();
     public static LinkedList<Employee_Project_mapping> employee_project_mappings = new LinkedList<>();
     public static LinkedList<Ticket> tickets = new LinkedList<>();
@@ -355,10 +355,10 @@ public class DB {
         companies.add(company);
     }
 
-    public Company getCompany(long companyId) {
+    public Company getCompany(String userName , String pass) {
         AtomicReference<Company> company = new AtomicReference<>(new Company());
         companies.forEach(company1 -> {
-            if (company1.getId() == companyId)
+            if (company1.getUsername() == userName && company1.getPassword() == pass)
                 company.set(company1);
         });
         return company.get();

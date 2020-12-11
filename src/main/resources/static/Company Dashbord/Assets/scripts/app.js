@@ -34,7 +34,7 @@ document.querySelector('#Tickets').addEventListener('click' , ()=>{
 moment().locale('fa').format('YYYY/M/D');
 
 
-
+$aj
 
 
 

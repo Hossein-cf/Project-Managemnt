@@ -10,12 +10,16 @@ public class Employee {
     private long id;
     private String userName;
     private String password;
+    private String fatherName;
+    private String address;
+    private String bornPlace;
     private String name;
     private String lastName;
     private String nationalNumber;
     private List<String> roleList;
     private String email;
     private String phoneNumber;
+    private String homePhoneNumber;
     private List<Ticket> tickets;
     private String imageAddress;
     private long partId;

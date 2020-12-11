@@ -17,10 +17,10 @@ public class Ticket {
     private String description;
     private long destinationId;
     private long generatorId;
-    private long EmployeeId;
-    private long CustomerId;
-    private long SystemId;
-    // (to) (میتوانیم درخواست خود را به بخش یا یک نفر مخصوص ارسال کنیم)
+    private long employeeId;
+    private long customerId;
+    private long systemId;
+    // (to) (میتوانیم درخواست خود را به بخش یا یک نفر مخصوص اسال کنیم)
 //    If send to admin just select the admin address else if send to part just select the part else if send to agent just select the part > agent id
 //    If we want send ticket to agent and we want to does not show to part
     private String fileAddress;
