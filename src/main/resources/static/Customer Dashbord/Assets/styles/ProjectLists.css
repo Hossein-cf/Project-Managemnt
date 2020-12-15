@@ -9,3 +9,8 @@
 .rtl-table tr{
     text-align: right;
 }
+tbody tr:hover
+{
+    background-color:  #ddddbb;
+    cursor: pointer;
+}

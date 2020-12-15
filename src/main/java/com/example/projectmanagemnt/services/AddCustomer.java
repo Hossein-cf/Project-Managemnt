@@ -17,10 +17,21 @@ public class AddCustomer {
         dbHelper.addCustomer(customer);
     }
 
-    @GetMapping(path = "/customerGet",consumes = "application/json",produces = "application/json")
-    public Customer get(@RequestBody long ID){
-        System.out.println(ID);
-        return dbHelper.getCustomerById(ID);
+    @PostMapping(path = "/customerGet",consumes = "application/json",produces = "application/json")
+    public Customer get(@RequestBody Customer customer){
+        System.out.println(customer.getPassword());
+        Customer customer1 = new Customer();
+        customer1.setId(2l);
+        customer1.setName("hosssein");
+        customer1.setLastName("shakeri");
+        customer1.setEmail("shakryhsyn1@gmail.com");
+        customer1.setPassword("customer");
+        customer1.setUsername("customer");
+        customer1.setPhoneNumber("0914405206persia");
+        if (customer.getUsername().equals("customer") && customer.getPassword().equals("customer"))
+            return customer1;
+        return new Customer();
+        //return dbHelper.getCustomerById(customer.getUserName() , customer.getPassword());
     }
 
     @DeleteMapping(path = "/customerDelete",consumes = "application/json",produces = "application/json")

@@ -3,14 +3,14 @@ package com.example.projectmanagemnt.models.company;
 import lombok.Data;
 @Data
 public class Customer {
-    private long id;
+    private Long id;
     private String name;
     private String lastName;
     private String phoneNumber;
-    private String userName;
+    private String username;
     private String password;
     private String email;
-    private long companyId;
+    private Long companyId;
 
     /*•	Id
 •	Name

@@ -1,9 +1,6 @@
 package com.example.projectmanagemnt.DBHelper;
 
-import com.example.projectmanagemnt.models.Dialog;
-import com.example.projectmanagemnt.models.Notification;
-import com.example.projectmanagemnt.models.Task;
-import com.example.projectmanagemnt.models.Ticket;
+import com.example.projectmanagemnt.models.*;
 import com.example.projectmanagemnt.models.company.*;
 import com.example.projectmanagemnt.models.email.ReceiveEmailModel;
 
@@ -12,7 +9,7 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 
 public class DB {
-   public static long id;
+    public static long id;
     public static LinkedList<ReceiveEmailModel> emails = new LinkedList<>();
     public static LinkedList<Employee_Project_mapping> employee_project_mappings = new LinkedList<>();
     public static LinkedList<Ticket> tickets = new LinkedList<>();
@@ -24,10 +21,29 @@ public class DB {
     public static LinkedList<Part> parts = new LinkedList<>();
     public static LinkedList<Dialog> dialogs = new LinkedList<>();
     public static LinkedList<Company> companies = new LinkedList<>();
+    public static LinkedList<File> files = new LinkedList<>();
 
     public void addNotification(Notification notification) {
         notifications.add(notification);
     }
+
+
+    //files
+    public void addFile(File file) {
+        file.setId(id++);
+        files.add(file);
+    }
+
+    public File addFileByI(long id) {
+        AtomicReference<File> file1 = new AtomicReference<>(new File());
+        files.forEach(file -> {
+            if (file.getId() == id)
+                file1.set(file);
+
+        });
+        return file1.get();
+    }
+
 
     // email
     public void addEmail(ReceiveEmailModel email) {
@@ -51,7 +67,7 @@ public class DB {
                 model.set(emailModel);
         });
         return model.get();
-        
+
     }
 
     //ticket
@@ -81,9 +97,10 @@ public class DB {
     public List<Ticket> getTicketsForPartOfCompany(long partId) {
         List<Ticket> list = new LinkedList<>();
 
-        tickets.forEach(ticket -> {
-            if (ticket.getPartId() == partId)
-                list.add(ticket);
+
+        tickets.forEach(task -> {
+            if (task.getGeneratorId() == partId || task.getDestinationId() == partId)
+                list.add(task);
         });
 
         return list;
@@ -96,6 +113,16 @@ public class DB {
                 list.add(ticket);
         });
 
+        return list;
+    }
+
+    public List<Ticket> getTicketsForCustomer(long customerId) {
+
+        List<Ticket> list = new LinkedList<>();
+        tickets.forEach(task -> {
+            if (task.getGeneratorId() == customerId || task.getDestinationId() == customerId)
+                list.add(task);
+        });
         return list;
     }
 
@@ -147,10 +174,11 @@ public class DB {
     }
 
     //employee
-    public void deleteEmployee(Employee employee){
-        companies.removeIf(employee1 -> employee1.getId()==employee.getId());
+    public void deleteEmployee(Employee employee) {
+        companies.removeIf(employee1 -> employee1.getId() == employee.getId());
 
     }
+
     public Employee getEmployee(long id) {
         AtomicReference<Employee> employee = new AtomicReference<>();
         employees.forEach(e -> {
@@ -211,10 +239,11 @@ public class DB {
     }
 
     //customer
-    public void deleteCustomer(Customer customer){
-        companies.removeIf(customer1 -> customer1.getId()==customer.getId());
+    public void deleteCustomer(Customer customer) {
+        companies.removeIf(customer1 -> customer1.getId() == customer.getId());
 
     }
+
     public void addCustomer(Customer customer) {
         customer.setId(id++);
         customers.add(customer);
@@ -226,10 +255,10 @@ public class DB {
         customers.add(customer);
     }
 
-    public Customer getCustomerById(long customerId) {
+    public Customer getCustomerById(String user, String pass) {
         AtomicReference<Customer> customer = new AtomicReference<>(new Customer());
         customers.forEach(customer1 -> {
-            if (customer1.getId() == customerId)
+            if (customer1.getUsername().equals(user) && customer1.getPassword().equals(pass))
                 customer.set(customer1);
         });
         return customer.get();
@@ -249,8 +278,8 @@ public class DB {
     //
 //project
 
-    public void deleteProject(Project project){
-        companies.removeIf(project1 -> project1.getId()==project.getId());
+    public void deleteProject(Project project) {
+        companies.removeIf(project1 -> project1.getId() == project.getId());
 
     }
 
@@ -259,13 +288,13 @@ public class DB {
         projects.add(project);
     }
 
-    public Project getProjectByCustomerId(long customerId) {
-        AtomicReference<Project> project = new AtomicReference<>(new Project());
+    public List<Project> getProjectsForCustomer(long customerId) {
+        List<Project> list = new LinkedList<>();
         projects.forEach(project1 -> {
             if (project1.getCustomerId() == customerId)
-                project.set(project1);
+                list.add(project1);
         });
-        return project.get();
+        return list;
     }
 
     public void upDateProject(Project project) {
@@ -282,15 +311,36 @@ public class DB {
         return list;
     }
 
+    public List<Project> getProjectById(long id) {
+        List<Project> list = new LinkedList<>();
+        projects.forEach(project -> {
+            if (project.getId() == id)
+                list.add(project);
+        });
+        return list;
+    }
+
     //part
-    public void deletePart(Part part){
-        companies.removeIf(part1 -> part1.getId()==part.getId());
+    public void deletePart(Part part) {
+        companies.removeIf(part1 -> part1.getId() == part.getId());
 
     }
+
 
     public void addPart(Part part) {
         part.setId(id++);
         parts.add(part);
+    }
+
+    public long getPartId(String partName) {
+        AtomicReference<Part> part1 = new AtomicReference<>(new Part());
+        parts.forEach(part -> {
+            if (part.getName().contains(partName))
+                part1.set(part);
+        });
+        return part1.get().getId();
+
+
     }
 
     public Part getPartById(long partId) {
@@ -341,12 +391,13 @@ public class DB {
     }
 
     //company
-    public void deleteCompany(Company company){
-        companies.removeIf(company1 -> company1.getId()==company.getId());
+    public void deleteCompany(Company company) {
+        companies.removeIf(company1 -> company1.getId() == company.getId());
 
     }
-    public void updateCompany(Company company){
-        companies.removeIf(company1 -> company1.getId()==company.getId());
+
+    public void updateCompany(Company company) {
+        companies.removeIf(company1 -> company1.getId() == company.getId());
         companies.add(company);
     }
 
@@ -355,10 +406,10 @@ public class DB {
         companies.add(company);
     }
 
-    public Company getCompany(String userName , String pass) {
+    public Company getCompany(String userName, String pass) {
         AtomicReference<Company> company = new AtomicReference<>(new Company());
         companies.forEach(company1 -> {
-            if (company1.getUsername() == userName && company1.getPassword() == pass)
+            if (company1.getUsername().equals(userName) && company1.getPassword().equals(pass))
                 company.set(company1);
         });
         return company.get();

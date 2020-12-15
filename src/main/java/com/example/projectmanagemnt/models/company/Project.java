@@ -14,19 +14,22 @@ public class Project {
     private long id;
     private String subject;
     private String deadLine;
-    private String document;
+    private List<String> documents;
+    private String description;
     private long managerId;
-   // private List<Employee> employeesForProject;
     private List<Task> tasks;
     private List<Ticket> tickets;
-    private ProjectCondition condition;
-    private Date startTime;
+    private String condition = ProjectCondition.NOT_STARTED.value;
+    private String startTime;
+    private String generateTime;
     private long customerId;
     private String budget;
     private double satisfactionPercentage;//    درصد رضایت
     private long companyId;
 
 /*•	Id
+   // private List<Employee> employeesForProject;
+
 •	Subject
 •	Dead line
 •	Customer Document

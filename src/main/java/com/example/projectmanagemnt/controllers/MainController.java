@@ -3,6 +3,13 @@ package com.example.projectmanagemnt.controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 @Controller
 public class MainController {
@@ -45,6 +52,11 @@ public class MainController {
     public String goToAddDepartment_Company() {
 
         return "AddDepartment_Company";
+    }
+    @RequestMapping("/TicketPage_Company")
+    public String goToTicketPage_Company() {
+
+        return "TicketPage_Company";
     }
 
     @RequestMapping("/AddEmployee_Company")
@@ -120,6 +132,11 @@ public class MainController {
 
         return "projectsList_Manager";
     }
+    @RequestMapping("/projectPage_Manager")
+    public String goToprojectPage_Manager() {
+
+        return "projectPage_Manager";
+    }
 
     @RequestMapping("/TicketsList_Manager")
     public String goToTicketsList_Manager() {
@@ -145,6 +162,12 @@ public class MainController {
     public String goToDashbord_Customer() {
 
         return "dashbord_Customer";
+    }
+
+    @RequestMapping("/Login_Customer")
+    public String goToCustomerLogin_Customer() {
+
+        return "customerLogin_Customer";
     }
 
     @RequestMapping("/projectsList_Customer")
@@ -207,6 +230,7 @@ public class MainController {
 
         return "createProject_Admin";
     }
+
     @RequestMapping("/createTicket_Admin")
     public String goToCreateTicket_Admin() {
 
@@ -218,4 +242,15 @@ public class MainController {
 
         return "ticketsList_Admin";
     }
+
+    @RequestMapping("/44")
+    public String uploadPage() {
+
+        return "uploadview";
+    }
+
+    //upload
+    public static String uploadDirectory = System.getProperty("user.dir") + "/src/main/resources/static/uploads";
+
+
 }

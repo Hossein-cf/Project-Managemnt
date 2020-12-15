@@ -2,6 +2,7 @@ package com.example.projectmanagemnt.services;
 
 import com.example.projectmanagemnt.DBHelper.DB;
 
+import com.example.projectmanagemnt.models.company.Customer;
 import com.example.projectmanagemnt.models.company.Project;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,20 +14,20 @@ public class AddProject {
     DB dbHelper = new DB();
     @PostMapping(path = "/AddProjectPost",consumes = "application/json",produces = "application/json")
     public void add(@RequestBody Project project){
-        System.out.println(project.getId());
+        System.out.println(project.getDeadLine());
         dbHelper.addProject(project);
     }
 
-    @GetMapping(path = "/AddProjectGetProjectByCustomerId",consumes = "application/json",produces = "application/json")
-    public Project getByCustomerId(@RequestBody long ID){
-        System.out.println(ID);
-        return dbHelper.getProjectByCustomerId(ID);
+    @PostMapping(path = "/GetProjectsforCustomer",consumes = "application/json",produces = "application/json")
+    public List<Project> getByCustomerId(@RequestBody Customer customer){
+        System.out.println(customer.getId());
+        return dbHelper.getProjectsForCustomer(customer.getId());
     }
 
-    @GetMapping(path = "/AddProjectGetProjectForCompany",consumes = "application/json",produces = "application/json")
-    public List getProjectForCompany(@RequestBody long ID){
-        System.out.println(ID);
-        return dbHelper.getProjectForCompany(ID);
+    @PostMapping(path = "/getProjectByID",consumes = "application/json",produces = "application/json")
+    public List getProjectForCompany(@RequestBody Project project){
+        System.out.println(project.getId());
+        return dbHelper.getProjectById(project.getId());
     }
 
     @DeleteMapping(path = "/AddProjectDelete",consumes = "application/json",produces = "application/json")
