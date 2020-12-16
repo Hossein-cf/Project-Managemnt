@@ -127,3 +127,12 @@
 .no-data span{
     color: rgb(114, 111, 107);
 }
+.rtl-table{
+    direction: rtl;
+}
+.rtl-table-texts{
+    text-align: right;
+}
+.rtl-text{
+    text-align: right;
+}

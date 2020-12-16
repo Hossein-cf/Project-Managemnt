@@ -1,6 +1,7 @@
 package com.example.projectmanagemnt.services;
 
 import com.example.projectmanagemnt.DBHelper.DB;
+import com.example.projectmanagemnt.models.company.Employee;
 import com.example.projectmanagemnt.models.company.Part;
 import com.example.projectmanagemnt.models.enums.PartActivity;
 import lombok.Data;
@@ -61,10 +62,57 @@ public class AddPartOfCompany {
         System.out.println(part.getId());
         dbHelper.updatePart(part);
     }
+
     @PostMapping("/getPartId")
-    public Long getPartId(@RequestBody Part part){
+    public Long getPartId(@RequestBody Part part) {
         System.out.println(part.getName());
         return new DB().getPartId(part.getName());
     }
+    @PostMapping("/getPartByName")
+    public Part getPartByName(@RequestBody Part part) {
+        System.out.println(part.getName());
+        return new DB().getPartByName(part.getName());
+    }
+
+    @PostMapping( path = "/getCurrentAdmin" , consumes = "application/json", produces = "application/json")
+    public Employee getCurrentAdmin(@RequestBody UserPassPartName userPassPartName) {
+        Employee employee = new DB().getPartAdmin(userPassPartName.getUsername(), userPassPartName.getPassword());
+        if (employee != null) {
+            if (new DB().getCurrentAdminForPart(userPassPartName.getPartName(), employee.getId())) {
+                return employee;
+            }
+        }
+        Employee employee1 = new Employee();
+        employee1.setUsername("admin");
+        employee1.setName("hossein");
+        employee1.setLastName("shakeri");
+        employee1.setNationalNumber("6230064227");
+        employee1.setPhoneNumber("09149570548");
+        employee1.setEmail("shakryhsyn1@gmail.com");
+        return employee1;
+    }
+
+
+    @GetMapping("/getAllPartsName")
+    public List<String> getAllPartsName() {
+        List<String> names = new LinkedList<>();
+        names.add("فنی");
+        names.add("مالی");
+        List<Part> list = DB.parts;
+        list.forEach(o -> {
+            names.add(o.getName());
+        });
+        return names;
+    }
+
+
+}
+
+@Data
+class UserPassPartName {
+    private String partName;
+    private String password;
+    private String username;
+
 }
 

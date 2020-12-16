@@ -8,12 +8,12 @@
     margin: 0;
     padding: 0;
     font-family: Vazir;
-  }
-  body{
+}
+body{
     background:  #d6f5f5;
-  }
-   .login-wrap {
-     
+}
+.login-wrap {
+
     position: relative;
     margin: 5% auto;
     background: #ffffff;
@@ -22,21 +22,21 @@
     border-radius: 5px;
     box-shadow: 3px 3px 10px #333;
     padding: 50px 15px;
-  }
-  html .login-wrap h2 {
+}
+html .login-wrap h2 {
     text-align: center;
     font-weight: 200;
     font-size: 18px ;
     margin-top: 10px;
     color: #0066ff;
-  }
-   .form {
+}
+.form {
     padding-top: 50px;
 
-  }
-  html .login-wrap .form input[type="text"],
-  html .login-wrap .form input[type="password"],
-  html .login-wrap .form button {
+}
+html .login-wrap .form input[type="text"],
+html .login-wrap .form input[type="password"],
+html .login-wrap .form button {
     width: 80%;
     margin-left: 10%;
     margin-bottom: 25px;
@@ -44,28 +44,28 @@
     border-radius: 5px;
     outline: 0;
     -moz-outline-style: none;
-  }
-  html .login-wrap .form input[type="text"],
-  html .login-wrap .form input[type="password"] {
+}
+html .login-wrap .form input[type="text"],
+html .login-wrap .form input[type="password"] {
     border: 1px solid #bbb;
 
     padding: 0 10px;
     font-size: 14px;
     text-align: right;
-  }
-  html .login-wrap .form input[type="text"]:focus,
-  html .login-wrap .form input[type="password"]:focus {
+}
+html .login-wrap .form input[type="text"]:focus,
+html .login-wrap .form input[type="password"]:focus {
     border: 1px solid #3498db;
-  }
-  html .login-wrap .form a {
+}
+html .login-wrap .form a {
     text-align: center;
     font-size: 10px;
     color: #3498db;
-  }
-  html .login-wrap .form a p {
+}
+html .login-wrap .form a p {
     padding-bottom: 10px;
-  }
-  html .login-wrap .form button {
+}
+html .login-wrap .form button {
     margin-top: 2rem;
     background:  #1a75ff;
     border: none;
@@ -74,12 +74,29 @@
     font-weight: 200;
     cursor: pointer;
     transition: box-shadow .4s ease;
-  }
-  html .login-wrap .form button:hover {
+}
+html .login-wrap .form button:hover {
     box-shadow: 1px 1px 5px #555;
-  }
-  html .login-wrap .form button:active {
+}
+html .login-wrap .form button:active {
     box-shadow: 1px 1px 7px #222;
-  }
+}
 
-  
+
+/* rev  */
+.select-part{
+    width: 280px;
+    width: 80%;
+    margin-left: 10%;
+    margin-bottom: 0px;
+    height: 40px;
+    border-radius: 5px;
+    outline: 0;
+}
+.fix{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    direction: rtl;
+    margin-right: 30px;
+}

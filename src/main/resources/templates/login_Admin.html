@@ -3,20 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="Admin%20Dashbord/Assets/styles/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="Admin%20Dashbord/Assets/styles/loginPage.css">
     <title>login to System</title>
 </head>
 <body>
+
+
+
+
   <div class="login-wrap">
-    <h2> ورود به سیستم مدیریت </h2>
-    
-    <div class="form">
-      <input type="text" id="userName" placeholder="نام کاربری" name="userName" value="" />
-      <input type="password" id="passWord" placeholder="رمز عبور" name="PassWord"   />
-      <button id="login-btn"> ورود </button>
-    </div>
+      <h2> ورود به سیستم مدیریت </h2>
+
+      <div class="form fix">
+
+          <input type="text" id="username"  placeholder="نام کاربری" name="username" value="" />
+          <input type="password"  placeholder="رمز عبور" name="Password" id="Password"  />
+          <div class="select-part">
+              <select name="inputDepartment" id="inputDepartment" class="form-control dp-fix-style" onchange="refreshCustomFields(this)">
+                  <option   selected="selected"> انتخاب دپارتمان مورد نظر</option>
+
+              </select>
+          </div>
+
+          <button id="login-btn" > ورود </button>
+      </div>
   </div>
 
+  <script src="Admin%20Dashbord/Assets/scripts/jquery-3.5.1.slim.min.js"></script>
+  <script src="Admin%20Dashbord/Assets/scripts/bootstrap/bootstrap.bundle.min.js"></script>
  <script src="Admin%20Dashbord/Assets/scripts/loginPage.js"></script>
 </body>
 

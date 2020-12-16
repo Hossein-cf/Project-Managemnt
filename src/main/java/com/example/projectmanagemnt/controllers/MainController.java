@@ -132,7 +132,7 @@ public class MainController {
 
         return "projectsList_Manager";
     }
-    @RequestMapping("/projectPage_Manager")
+    @RequestMapping("/projectPage_ManagerprojectPage_Manager")
     public String goToprojectPage_Manager() {
 
         return "projectPage_Manager";
@@ -206,11 +206,16 @@ public class MainController {
         return "TicketPage_Customer";
     }
 
-    // company admin
+    //  admin
     @RequestMapping("/dahsbord_Admin")
     public String goToDahsbord_Admin() {
 
         return "dahsbord_Admin";
+    }
+    @RequestMapping("/ProjectRequestList_Admin")
+    public String goToProjectRequestList_Admin() {
+
+        return "ProjectRequestList_Admin";
     }
 
     @RequestMapping("/employeesList_Admin")
@@ -249,8 +254,16 @@ public class MainController {
         return "uploadview";
     }
 
+
+    @RequestMapping("/Login_Admion")
+    public String goToLogin_Admion(){
+        return "login_Admin";
+    }
+
+
+
     //upload
-    public static String uploadDirectory = System.getProperty("user.dir") + "/src/main/resources/static/uploads";
+   // public static String uploadDirectory = System.getProperty("user.dir") + "/src/main/resources/static/uploads";
 
 
 }

@@ -253,15 +253,15 @@
             <form class="customize-form" action="" method="post">
                 <div class="form-row">
                     <div class="form-group col-lg-8">
-                        <input type="email" class="form-control text-right disabled" id="NumberOfAdmins" value="SupportAdmin@gmail.com" disabled="disabled">
+                        <input type="email" class="form-control text-right disabled"  value="SupportAdmin@gmail.com" disabled="disabled">
                     </div>
                     <div class="form-group col-lg-4">
-                        <input type="text" class="form-control text-right disabled" id="NumberOfAdmins" value=" ادمین فنی" disabled="disabled">
+                        <input type="text" class="form-control text-right disabled"  value=" ادمین فنی" disabled="disabled">
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-lg-12">
-                        <input type="text" class="form-control text-right" id="NumberOfAdmins" placeholder="  عنوان پروژه ">
+                        <input type="text" class="form-control text-right" id="projectSubject" placeholder="  عنوان پروژه ">
                     </div>
                     
                 </div>
@@ -269,23 +269,23 @@
                     
 
                     <div class="form-group col-lg-5">
-                        <input type="text" class="form-control text-right" id="NumberOfAdmins" placeholder="مهلت پروژه">
+                        <input type="text" class="form-control text-right" id="deadLine" placeholder="مهلت پروژه">
                     </div>
                     <div class="form-group col-lg-5">
-                        <input type="text" class="form-control text-right" id="NumberOfAdmins" placeholder=" آی دی مدیر پروژه">
+                        <input type="text" class="form-control text-right" id="projectManagerId" placeholder=" آی دی مدیر پروژه">
                     </div>
                 </div>
                 <div class="form-row customize-text-area">
                     <div class="form-group green-border-focus">
                         <label >: توضیحات لازم</label>
-                        <textarea class="form-control customize-form customize-text-area" id="" rows="6"></textarea>
+                        <textarea class="form-control customize-form customize-text-area" id="description" rows="6"></textarea>
                       </div>
                 </div>
-                <div class= "form-row upload-file-container">
-                    <input class="btn " type="file" name="" id="">
+                <div id="fileContainer"  class= "form-row upload-file-container">
+                    <input id="fileInput" class="btn " type="file" >
                 </div>
                 <div class="submit-btn">
-                    <button class="btn btn-primary">ارسال</button>
+                    <button id="createProjectBtn" class="btn btn-primary">ارسال</button>
                 </div>
 
             </form>
@@ -331,12 +331,13 @@
     <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
     <script src="Admin%20Dashbord/Assets/scripts/app.js"></script>
 
+
     <script src="Admin%20Dashbord/Assets/scripts/moment.js"></script>
     <script src="Admin%20Dashbord/Assets/scripts/jalali-moment.js"></script>
 
     <script src="Admin%20Dashbord/Assets/scripts/jquery-3.5.1.slim.min.js"></script>
     <script src="Admin%20Dashbord/Assets/scripts/bootstrap/bootstrap.bundle.min.js"></script>
-
+    <script src="Admin%20Dashbord/Assets/scripts/createProject.js"></script>
     <script>
         $(document).ready(function(){
           $('[data-toggle="tooltip"]').tooltip();   

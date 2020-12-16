@@ -1,5 +1,6 @@
 package com.example.projectmanagemnt.models.company;
 
+import com.example.projectmanagemnt.models.File;
 import com.example.projectmanagemnt.models.Task;
 import com.example.projectmanagemnt.models.Ticket;
 import com.example.projectmanagemnt.models.enums.ProjectCondition;
@@ -13,15 +14,16 @@ public class Project {
 
     private long id;
     private String subject;
-    private String deadLine;
-    private List<String> documents;
+    private String documents;
     private String description;
     private long managerId;
     private List<Task> tasks;
     private List<Ticket> tickets;
     private String condition = ProjectCondition.NOT_STARTED.value;
     private String startTime;
+    private String deadLine;
     private String generateTime;
+    private String endedTime;
     private long customerId;
     private String budget;
     private double satisfactionPercentage;//    درصد رضایت

@@ -27,7 +27,7 @@ let sendData = ()=>{
 
 
     formData.delete('document')
-    formData.append("document", a)
+    formData.append("documents", a)
     formData.append("customerId", currentOBJ.id)
     var object = {};
     formData.forEach(function (value, key) {

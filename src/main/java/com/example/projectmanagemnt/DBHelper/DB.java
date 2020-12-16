@@ -3,13 +3,14 @@ package com.example.projectmanagemnt.DBHelper;
 import com.example.projectmanagemnt.models.*;
 import com.example.projectmanagemnt.models.company.*;
 import com.example.projectmanagemnt.models.email.ReceiveEmailModel;
+import com.example.projectmanagemnt.models.enums.ProjectCondition;
 
 import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 
 public class DB {
-    public static long id;
+    public static long id =1;
     public static LinkedList<ReceiveEmailModel> emails = new LinkedList<>();
     public static LinkedList<Employee_Project_mapping> employee_project_mappings = new LinkedList<>();
     public static LinkedList<Ticket> tickets = new LinkedList<>();
@@ -188,6 +189,17 @@ public class DB {
         return employee.get();
     }
 
+    public Employee getPartAdmin(String user, String pass) {
+        List<Employee> employee = new LinkedList<>();
+        employees.forEach(e -> {
+            if (e.getUsername().equals(user) && e.getPassword().equals(pass))
+                employee.add(e);
+        });
+        if (employee.size() != 0)
+            return employee.get(0);
+        return null;
+    }
+
     public void addEmployee(Employee employee) {
         employee.setId(id++);
         employees.add(employee);
@@ -255,7 +267,7 @@ public class DB {
         customers.add(customer);
     }
 
-    public Customer getCustomerById(String user, String pass) {
+    public Customer getCustomerByUserPas(String user, String pass) {
         AtomicReference<Customer> customer = new AtomicReference<>(new Customer());
         customers.forEach(customer1 -> {
             if (customer1.getUsername().equals(user) && customer1.getPassword().equals(pass))
@@ -272,6 +284,16 @@ public class DB {
                 list.add(customer1);
         });
         return list;
+
+    }
+    public String  getCustomerById(long customerId) {
+        AtomicReference<String> list =new AtomicReference<>();
+        customers.forEach(customer1 -> {
+            if (customer1.getId() == customerId)
+                list.set(customer1.getName());
+        });
+
+        return list.get();
 
     }
 
@@ -311,10 +333,18 @@ public class DB {
         return list;
     }
 
-    public List<Project> getProjectById(long id) {
-        List<Project> list = new LinkedList<>();
+    public Project getProjectById(long id) {
+        AtomicReference<Project> list = new AtomicReference<>(new Project());
         projects.forEach(project -> {
             if (project.getId() == id)
+                list.set(project);
+        });
+        return list.get();
+    } 
+    public List<Project> getNOT_STARTEDProjects() {
+        List<Project> list = new LinkedList<>();
+        projects.forEach(project -> {
+            if (project.getCondition().equals(ProjectCondition.NOT_STARTED.value) )
                 list.add(project);
         });
         return list;
@@ -343,10 +373,31 @@ public class DB {
 
     }
 
+    public boolean getCurrentAdminForPart(String partName, long adminId) {
+        List<Part> list = new LinkedList<>();
+        parts.forEach(part -> {
+            if (part.getName().contains(partName) && part.getAdminId() == adminId)
+                list.add(part);
+        });
+
+        return list.size() > 0;
+
+
+    }
+
     public Part getPartById(long partId) {
         AtomicReference<Part> part1 = new AtomicReference<>(new Part());
         parts.forEach(part -> {
             if (part.getId() == partId)
+                part1.set(part);
+        });
+        return part1.get();
+    }
+
+    public Part getPartByName(String name) {
+        AtomicReference<Part> part1 = new AtomicReference<>(new Part());
+        parts.forEach(part -> {
+            if (part.getName().equals(name))
                 part1.set(part);
         });
         return part1.get();

@@ -6,5 +6,8 @@ import lombok.Data;
 public class File {
     private long id;
     private String name;
-    private String fileSize;
+    private String size;
+    private String path;
+    private long item_id;
+    private String item_type;
 }

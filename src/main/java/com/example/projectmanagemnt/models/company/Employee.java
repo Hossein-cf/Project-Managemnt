@@ -8,7 +8,7 @@ import java.util.List;
 @Data
 public class Employee {
     private long id;
-    private String userName;
+    private String username;
     private String password;
     private String fatherName;
     private String address;

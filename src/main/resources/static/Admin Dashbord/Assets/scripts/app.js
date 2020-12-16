@@ -37,12 +37,4 @@ document.querySelector('#Tickets').addEventListener('click' , ()=>{
 })
 
 
-moment().locale('fa').format('YYYY/M/D');
-
-
-
-
-
-
-
-
+//moment().locale('fa').format('YYYY/M/D');
