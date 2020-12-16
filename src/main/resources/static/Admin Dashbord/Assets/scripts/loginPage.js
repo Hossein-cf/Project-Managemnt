@@ -53,7 +53,7 @@ loginBtn.addEventListener('click', () => {
         .then(response => response.json())
         .then(res => {
             console.log(res)
-            if (res.username == null ||selectedPart ==="مالی")
+            if (res.id == 0 ||selectedPart ==="مالی")
                 alert('error')
             else {
 

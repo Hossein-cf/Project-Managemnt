@@ -1,6 +1,6 @@
 let obj = {
     // TODO get company id
-    companyId: 123
+    companyId: 596595
 }
 let tbody = document.getElementById('departmentsList')
 

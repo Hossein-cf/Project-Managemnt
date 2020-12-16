@@ -7,8 +7,8 @@ public enum RollsInTicket {
     COMPANY("شرکت"),
     SYSTEM("سیستم"),
     MANAGER("مدیر پروژه");
-    public String value;
 
+    public String value;
     private RollsInTicket(String value) {
         this.value = value;
     }

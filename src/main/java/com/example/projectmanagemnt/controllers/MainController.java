@@ -261,7 +261,10 @@ public class MainController {
     }
 
 
-
+    @RequestMapping("/ticketPage_Admin")
+    public String goTicketPage_Admin(){
+        return "TicketPage_Admin";
+    }
     //upload
    // public static String uploadDirectory = System.getProperty("user.dir") + "/src/main/resources/static/uploads";
 

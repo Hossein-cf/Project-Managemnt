@@ -13,6 +13,8 @@ public class Part {
     private long adminId;
     private String description;
     private String createTime;
+    private String username;
+    private String password;
     private PartActivity partActivity;
     private List<Employee> employeesForPart;
     private List<Ticket> tickets;

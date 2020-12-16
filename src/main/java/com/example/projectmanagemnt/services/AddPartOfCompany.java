@@ -1,6 +1,7 @@
 package com.example.projectmanagemnt.services;
 
 import com.example.projectmanagemnt.DBHelper.DB;
+import com.example.projectmanagemnt.models.company.Company;
 import com.example.projectmanagemnt.models.company.Employee;
 import com.example.projectmanagemnt.models.company.Part;
 import com.example.projectmanagemnt.models.enums.PartActivity;
@@ -32,22 +33,22 @@ public class AddPartOfCompany {
 
     @PostMapping(path = "/GetPartsOfCompany", consumes = "application/json", produces = "application/json")
     public List<Part> getPartsOfCompany(Long companyId) {
-        Part part = new Part();
-        part.setId(12l);
-        part.setName("fani");
-        part.setAdminId(2l);
-        part.setPartActivity(PartActivity.ACTIVE);
-        part.setCreateTime(new Date().toString());
-        Part part1 = new Part();
-        part1.setId(13l);
-        part1.setName("fani");
-        part1.setAdminId(3l);
-        part1.setPartActivity(PartActivity.ACTIVE);
-        part1.setCreateTime(new Date().toString());
-        List<Part> list = new LinkedList<>();
-        list.add(part);
-        list.add(part1);
-        return list;
+//        Part part = new Part();
+//        part.setId(12l);
+//        part.setName("fani");
+//        part.setAdminId(2l);
+//        part.setPartActivity(PartActivity.ACTIVE);
+//        part.setCreateTime(new Date().toString());
+//        Part part1 = new Part();
+//        part1.setId(13l);
+//        part1.setName("fani");
+//        part1.setAdminId(3l);
+//        part1.setPartActivity(PartActivity.ACTIVE);
+//        part1.setCreateTime(new Date().toString());
+//        List<Part> list = new LinkedList<>();
+//        list.add(part);
+//        list.add(part1);
+        return new DB().getAllPartsForCompany(companyId);
         //return dbHelper.getAllPartsForCompany(companyId);
     }
 
@@ -78,17 +79,17 @@ public class AddPartOfCompany {
     public Employee getCurrentAdmin(@RequestBody UserPassPartName userPassPartName) {
         Employee employee = new DB().getPartAdmin(userPassPartName.getUsername(), userPassPartName.getPassword());
         if (employee != null) {
-            if (new DB().getCurrentAdminForPart(userPassPartName.getPartName(), employee.getId())) {
+
                 return employee;
-            }
+
         }
         Employee employee1 = new Employee();
-        employee1.setUsername("admin");
-        employee1.setName("hossein");
-        employee1.setLastName("shakeri");
-        employee1.setNationalNumber("6230064227");
-        employee1.setPhoneNumber("09149570548");
-        employee1.setEmail("shakryhsyn1@gmail.com");
+//        employee1.setUsername("admin");
+//        employee1.setName("hossein");
+//        employee1.setLastName("shakeri");
+//        employee1.setNationalNumber("6230064227");
+//        employee1.setPhoneNumber("09149570548");
+//        employee1.setEmail("shakryhsyn1@gmail.com");
         return employee1;
     }
 
@@ -96,13 +97,19 @@ public class AddPartOfCompany {
     @GetMapping("/getAllPartsName")
     public List<String> getAllPartsName() {
         List<String> names = new LinkedList<>();
-        names.add("فنی");
-        names.add("مالی");
+
         List<Part> list = DB.parts;
         list.forEach(o -> {
             names.add(o.getName());
         });
         return names;
+    }
+
+
+    @PostMapping("/getNumberOFPartsForCompany")
+    public Long getNumberOFPartsForCompany(@RequestBody Company company) {
+
+        return Long.parseLong(new DB().getAllPartsForCompany(company.getId()).size()+"");
     }
 
 

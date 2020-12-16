@@ -3,6 +3,7 @@ package com.example.projectmanagemnt.services;
 import com.example.projectmanagemnt.DBHelper.DB;
 
 
+import com.example.projectmanagemnt.models.company.Company;
 import com.example.projectmanagemnt.models.company.Customer;
 import lombok.Data;
 import org.springframework.web.bind.annotation.*;
@@ -39,6 +40,7 @@ public class AddCustomer {
         System.out.println(customer.getPassword());
         Customer customer1 = new Customer();
         customer1.setId(1l);
+        customer1.setCompanyId(596595l);
         customer1.setName("hosssein");
         customer1.setLastName("shakeri");
         customer1.setEmail("shakryhsyn1@gmail.com");
@@ -50,6 +52,12 @@ public class AddCustomer {
             return customer1;
 
         return dbHelper.getCustomerByUserPas(customer.getUsername(), customer.getPassword());
+    }
+
+    @PostMapping("/getNumberOfCustomersForCompany")
+    public Long getNumberOFPartsForCompany(@RequestBody Company company) {
+
+        return Long.parseLong(new DB().getAllCustomersForCompany(company.getId()).size()+"");
     }
 
     @DeleteMapping(path = "/customerDelete", consumes = "application/json", produces = "application/json")

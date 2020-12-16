@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 
 public class DB {
-    public static long id =1;
+    public static long id = 1;
     public static LinkedList<ReceiveEmailModel> emails = new LinkedList<>();
     public static LinkedList<Employee_Project_mapping> employee_project_mappings = new LinkedList<>();
     public static LinkedList<Ticket> tickets = new LinkedList<>();
@@ -97,8 +97,6 @@ public class DB {
 
     public List<Ticket> getTicketsForPartOfCompany(long partId) {
         List<Ticket> list = new LinkedList<>();
-
-
         tickets.forEach(task -> {
             if (task.getGeneratorId() == partId || task.getDestinationId() == partId)
                 list.add(task);
@@ -190,13 +188,13 @@ public class DB {
     }
 
     public Employee getPartAdmin(String user, String pass) {
-        List<Employee> employee = new LinkedList<>();
-        employees.forEach(e -> {
+        List<Part> parts1 = new LinkedList<>();
+        parts.forEach(e -> {
             if (e.getUsername().equals(user) && e.getPassword().equals(pass))
-                employee.add(e);
+                parts1.add(e);
         });
-        if (employee.size() != 0)
-            return employee.get(0);
+        if (parts1.size() != 0)
+            return getEmployee(parts1.get(0).getAdminId());
         return null;
     }
 
@@ -286,8 +284,9 @@ public class DB {
         return list;
 
     }
-    public String  getCustomerById(long customerId) {
-        AtomicReference<String> list =new AtomicReference<>();
+
+    public String getCustomerById(long customerId) {
+        AtomicReference<String> list = new AtomicReference<>();
         customers.forEach(customer1 -> {
             if (customer1.getId() == customerId)
                 list.set(customer1.getName());
@@ -340,14 +339,29 @@ public class DB {
                 list.set(project);
         });
         return list.get();
-    } 
+    }
+
     public List<Project> getNOT_STARTEDProjects() {
         List<Project> list = new LinkedList<>();
         projects.forEach(project -> {
-            if (project.getCondition().equals(ProjectCondition.NOT_STARTED.value) )
+            if (project.getCondition().equals(ProjectCondition.NOT_STARTED.value))
                 list.add(project);
         });
         return list;
+    }
+
+    public List<Project> getSTARTEDProjects() {
+        List<Project> list = new LinkedList<>();
+        projects.forEach(project -> {
+            if (project.getCondition().equals(ProjectCondition.IN_PROGRESS.value))
+                list.add(project);
+        });
+        return list;
+    }
+
+    //Employee_Project-Mapping
+    public long getNumberOfEmployeeInCurrentProject(long projectId) {
+        return employee_project_mappings.stream().filter(employee_project_mapping -> employee_project_mapping.getProjectId() == projectId).count();
     }
 
     //part
@@ -417,6 +431,7 @@ public class DB {
         return list;
     }
 
+
     //dialog
     public void addDialog(Dialog dialog) {
         dialog.setId(id++);
@@ -450,6 +465,16 @@ public class DB {
     public void updateCompany(Company company) {
         companies.removeIf(company1 -> company1.getId() == company.getId());
         companies.add(company);
+    }
+
+    public Company getCompanyById(long id) {
+        AtomicReference<Company> company1 = new AtomicReference<>(new Company());
+        companies.forEach(company -> {
+            if (company.getId() == id) {
+                company1.set(company);
+            }
+        });
+        return company1.get();
     }
 
     public void addCompany(Company company) {

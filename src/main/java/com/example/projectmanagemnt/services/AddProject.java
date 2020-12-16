@@ -39,13 +39,14 @@ public class AddProject {
     public List<Project> getNotStartedProjects() {
         List<Project> list = new LinkedList<>();
         list = dbHelper.getNOT_STARTEDProjects();
-//        Project project = new Project();
-//        project.setCustomerId(10);
-//        project.setCondition(ProjectCondition.NOT_STARTED.value);
-//        project.setSubject("ticketing");
-//        project.setGenerateTime(new Date().toString());
-//        project.setId(2);
-//        list.add(project);
+
+        return list;
+    }
+    @GetMapping(path = "/getStartedProjects")
+    public List<Project> getStartedProjects() {
+        List<Project> list = new LinkedList<>();
+        list = dbHelper.getSTARTEDProjects();
+
         return list;
     }
 
