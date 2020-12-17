@@ -34,6 +34,7 @@ function setTicketsToTable() {
         tr.setAttribute('onclick','goToTicketPage(this)')
 
         let td_DestinationName = document.createElement('td')
+        //TODO remember to add roll of employee beside name
         td_DestinationName.innerText = generatorsName[i]
         tr.appendChild(td_DestinationName)
 

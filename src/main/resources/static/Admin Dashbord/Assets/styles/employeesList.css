@@ -52,3 +52,10 @@
 .filter-container div{
     margin: 20px 0;
 }
+.options-icon:hover{
+
+    background-color: rgb(179, 236, 236);
+    cursor: pointer;
+    border-radius: 50px;
+
+}

@@ -246,49 +246,49 @@
     <section class="dashbord-container">
        <div class="main-container">
         <div class="page-title">
-            <h1>ارسال تیکت</h1>
+            <h1>ارسال تیکت به مدیریت </h1>
         </div>
         <div class="custom-row">
             <form class="customize-form" action="" method="post">
                 <div class="form-row">
                     <div class="form-group col-lg-8">
-                        <input type="email" class="form-control text-right disabled" id="NumberOfAdmins" value="Partsupport@gmail.com" disabled="disabled">
+                        <input type="email" class="form-control text-right disabled" id="partEmail" value="Partsupport@gmail.com" disabled="disabled">
                     </div>
                     <div class="form-group col-lg-4">
-                        <input type="text" class="form-control text-right disabled" id="NumberOfAdmins" value="ادمین فنی" disabled="disabled">
+                        <input type="text" class="form-control text-right disabled" id="partName" value="ادمین فنی" disabled="disabled">
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-lg-12">
-                        <input type="text" class="form-control text-right" id="NumberOfAdmins" placeholder=" موضوع تیکت ">
+                        <input type="text" class="form-control text-right" id="subject" placeholder=" موضوع تیکت ">
                     </div>
                     
                 </div>
                 <div class="form-row flex-md-row-reverse">
                     <div class="form-group col-lg-5">
-                        <input type="text" class="form-control text-right" id="NumberOfAdmins" placeholder=" گیرنده ">
+                        <input type="text" class="form-control text-right" id="destination" value="مدیریت شرکت" disabled="disabled">
                     </div>
                    
                     <div class="form-group col-lg-5">
-                        <select name="deptid" id="inputDepartment" class="form-control dp-fix-style" onchange="refreshCustomFields(this)">
-                            <option id="no-data" value="1" selected="selected"> متوسط</option>  
-                            <option id="no-data" value="2" selected="selected">کم</option>  
-                            <option id="no-data" value="3" selected="selected">بالا</option>  
-                            <option id="no-data" value="4" selected="selected">ضروری</option>  
+                        <select name="priority" id="priority" class="form-control dp-fix-style" onchange="refreshCustomFields(this)">
+                            <option  value="1" selected="selected"> متوسط</option>
+                            <option  value="2" selected="selected">کم</option>
+                            <option  value="3" selected="selected">بالا</option>
+                            <option  value="4" selected="selected">ضروری</option>
                         </select>
                     </div>
                 </div>
                 <div class="form-row customize-text-area">
                     <div class="form-group green-border-focus">
                         <label >:متن تیکت</label>
-                        <textarea class="form-control customize-form customize-text-area" id="" rows="6"></textarea>
+                        <textarea id="description" class="form-control customize-form customize-text-area"  rows="6"></textarea>
                       </div>
                 </div>
                 <div class= "form-row upload-file-container">
-                    <input class="btn " type="file" name="" id="">
+                    <input class="btn " type="file" name="document" id="document">
                 </div>
                 <div class="submit-btn">
-                    <button class="btn btn-primary">ارسال</button>
+                    <button id="submitTicket" class="btn btn-primary">ارسال</button>
                 </div>
 
             </form>
@@ -339,6 +339,7 @@
 
     <script src="Admin%20Dashbord/Assets/scripts/jquery-3.5.1.slim.min.js"></script>
     <script src="Admin%20Dashbord/Assets/scripts/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="Admin%20Dashbord/Assets/scripts/createTicket.js"></script>
 
     <script>
         $(document).ready(function(){

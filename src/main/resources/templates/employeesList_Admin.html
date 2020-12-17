@@ -302,38 +302,52 @@
                 <table class="table rtl-table">
                     <thead class="thead-light">
                       <tr class="rtl-table-texts">
-                        <th scope="col">#</th>
-                        <th scope="col"> نام کارمند </th>
-                        <th scope="col"> شماره همراه</th>
-                        <th scope="col"> ایمیل</th>
-                        <th scope="col"> تخصص </th>
-                        <th scope="col"> وضعیت</th>
-                        <th scope="col"> ارسال تیکت</th>
+                          <th scope="col">#</th>
+                          <th scope="col"> نام کارمند </th>
+                          <th scope="col"> شماره همراه</th>
+                          <th scope="col"> ایمیل</th>
+                          <th scope="col"> تخصص </th>
+                          <th scope="col"> وضعیت</th>
+                          <th scope="col"> بیشتر</th>
                       </tr>
                     </thead>
-                    <tbody>
-                      <!-- <tr class="rtl-table-texts">
+                    <tbody id="partEmployees">
+                    <tr class="rtl-table-texts">
                         <th scope="row">1</th>
                         <td> جواد رضایی  </td>
                         <td> 09121234567</td>
                         <td>javadRezzaye@gmail.com</td>
                         <td>1</td>
                         <td>0</td>
-                      </tr>
-                      <tr class="rtl-table-texts">
+                        <td  class="dropdown option-icone-container">
+                            <i class='bx bx-down-arrow options-icon' data-toggle="dropdown" >
+                            <ul class="dropdown-menu" >
+                                <li class="dropdown-item"><a href="#">ایجاد تیکت</a></li>
+                                <li class="dropdown-item"><a href="#">  ایجاد ایمیل</a></li>
+                            </ul>
+                        </td>
+
+                    </tr>
+                    <tr class="rtl-table-texts">
                         <th scope="row">2</th>
                         <td> قادر صالحی  </td>
                         <td>09149783368 </td>
                         <td>amirghsl1380@gmail.com </td>
                         <td>1 </td>
                         <td>1</td>
-                      </tr> -->
+                        <td  class="dropdown option-icone-container"><i class='bx bx-down-arrow options-icon' data-toggle="dropdown" >
+                            <ul class="dropdown-menu" >
+                                <li class="dropdown-item"><a href="#">ایجاد تیکت</a></li>
+                                <li class="dropdown-item"><a href="#">  ایجاد ایمیل</a></li>
+                            </ul>
+                        </td>
+                    </tr>
                       
                     </tbody>
                   </table>
-                  <div class="no-data">
-                    <span> لیست کارمندان خالی است</span>
-                  </div>
+<!--                  <div class="no-data">-->
+<!--                    <span> لیست کارمندان خالی است</span>-->
+<!--                  </div>-->
             </div>
             
        </div>
@@ -382,6 +396,7 @@
 
     <script src="Admin%20Dashbord/Assets/scripts/jquery-3.5.1.slim.min.js"></script>
     <script src="Admin%20Dashbord/Assets/scripts/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="Admin%20Dashbord/Assets/scripts/employeesList.js"></script>
 
     <script>
         $(document).ready(function(){
