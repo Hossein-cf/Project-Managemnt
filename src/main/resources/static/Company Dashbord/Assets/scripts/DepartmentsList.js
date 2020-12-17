@@ -1,6 +1,6 @@
 let obj = {
     // TODO get company id
-    companyId: 596595
+    id: 596595
 }
 let tbody = document.getElementById('departmentsList')
 
@@ -9,11 +9,14 @@ fetch('http://localhost:8086/GetPartsOfCompany', {
     headers: {
         'Content-Type': 'application/json;charset=utf-8'
     },
-    body: JSON.stringify(obj)
+    body: JSON.stringify({
+        id:596595
+    })
 })
     .then(response => response.json())
     .then(res => {
-        const array = res
+        console.log(res)
+        let array = res
         for (const item of array) {
             let tr = document.createElement('tr')
             tr.className = 'rtl-table-texts'

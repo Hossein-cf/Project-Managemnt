@@ -1,11 +1,11 @@
 package com.example.projectmanagemnt.models.enums;
 
 public enum PartActivity {
-    ACTIVE(1),
-    INACTIVE(0);
-    private int value;
+    ACTIVE("فعال"),
+    INACTIVE("غیر فعال");
+    public String value;
 
-    private PartActivity(int value) {
+    private PartActivity(String value) {
         this.value = value;
     }
 }
