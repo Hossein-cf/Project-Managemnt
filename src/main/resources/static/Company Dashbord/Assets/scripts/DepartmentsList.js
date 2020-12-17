@@ -20,6 +20,7 @@ fetch('http://localhost:8086/GetPartsOfCompany', {
         for (const item of array) {
             let tr = document.createElement('tr')
             tr.className = 'rtl-table-texts'
+            tr.setAttribute('onclick','openDepartmentPage(this)')
 
             let td_id = document.createElement('td')
             td_id.innerText = item.id
@@ -85,3 +86,15 @@ fetch('http://localhost:8086/GetPartsOfCompany', {
         //     tbody.appendChild(tr)
         // })
     })
+
+
+function openDepartmentPage(x) {
+    console.log(x)
+    var id = x.getElementsByTagName("td")[0]
+    var name = x.getElementsByTagName("td")[1]
+
+    console.log(id.innerHTML)
+    localStorage.setItem("DEPARTMENT_ID",id.innerHTML)
+    localStorage.setItem("DEPARTMENT_NAME",name.innerHTML)
+    window.location.href = 'http://localhost:8086/DepartmentPage_Company'
+}

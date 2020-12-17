@@ -23,6 +23,10 @@
 .rtl-table-texts{
     text-align: right;
 }
+tbody tr:hover{
+    background-color: #1a75ff;
+    cursor: pointer;
+}
 
 .no-data{
 

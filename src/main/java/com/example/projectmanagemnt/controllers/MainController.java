@@ -273,4 +273,9 @@ public class MainController {
         return "DepartmentPage_Company";
     }
 
+    @RequestMapping("/DepartmentEmployeesList")
+    public String goToDepartmentEmployeesList(){
+        return "DepartmentEmployeesList_Company";
+    }
+
 }
