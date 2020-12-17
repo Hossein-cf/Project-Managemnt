@@ -14,7 +14,7 @@ import java.nio.file.Paths;
 @Controller
 public class MainController {
     //system
-    @RequestMapping("/")
+    @RequestMapping("/login_System")
     public String index() {
         return "login_System";
     }
@@ -53,6 +53,7 @@ public class MainController {
 
         return "AddDepartment_Company";
     }
+
     @RequestMapping("/TicketPage_Company")
     public String goToTicketPage_Company() {
 
@@ -95,6 +96,11 @@ public class MainController {
 
         return "dahsbord_Employee";
     }
+    @RequestMapping("/Login_Employee")
+    public String goToLogin_Employee() {
+
+        return "login_Employee";
+    }
 
     @RequestMapping("/projectsList_Employee")
     public String goToProjectsList_Employee() {
@@ -126,12 +132,18 @@ public class MainController {
 
         return "dahsbord_Manager";
     }
+ @RequestMapping("/Login_Manager")
+    public String goToLogin_Manager() {
+
+        return "login_Manager";
+    }
 
     @RequestMapping("/projectsList_Manager")
     public String goToProjectsList_Manager() {
 
         return "projectsList_Manager";
     }
+
     @RequestMapping("/projectPage_ManagerprojectPage_Manager")
     public String goToprojectPage_Manager() {
 
@@ -212,6 +224,7 @@ public class MainController {
 
         return "dahsbord_Admin";
     }
+
     @RequestMapping("/ProjectRequestList_Admin")
     public String goToProjectRequestList_Admin() {
 
@@ -256,20 +269,23 @@ public class MainController {
 
 
     @RequestMapping("/Login_Admion")
-    public String goToLogin_Admion(){
+    public String goToLogin_Admion() {
         return "login_Admin";
     }
 
 
     @RequestMapping("/ticketPage_Admin")
-    public String goTicketPage_Admin(){
+    public String goTicketPage_Admin() {
         return "TicketPage_Admin";
     }
     //upload
-   // public static String uploadDirectory = System.getProperty("user.dir") + "/src/main/resources/static/uploads";
+
+    // public static String uploadDirectory = System.getProperty("user.dir") + "/src/main/resources/static/uploads";
+
 //department
+
     @RequestMapping("/DepartmentPage_Company")
-    public String goToDepartmentPage(){
+    public String goToDepartmentPage() {
         return "DepartmentPage_Company";
     }
 

@@ -1,6 +1,7 @@
 package com.example.projectmanagemnt.models.company;
 
 import com.example.projectmanagemnt.models.Ticket;
+import com.example.projectmanagemnt.models.enums.EmployeeCondition;
 import lombok.Data;
 
 import java.util.List;
@@ -14,6 +15,7 @@ public class Employee {
     private String address;
     private String bornPlace;
     private String name;
+    private String condition= EmployeeCondition.WAITING_FOR_PROJECT.value;
     private String lastName;
     private String nationalNumber;
     private List<String> roleList;

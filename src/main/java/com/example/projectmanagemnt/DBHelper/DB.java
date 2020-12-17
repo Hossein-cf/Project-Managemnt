@@ -7,6 +7,7 @@ import com.example.projectmanagemnt.models.enums.ProjectCondition;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
 
 public class DB {
@@ -186,6 +187,24 @@ public class DB {
         });
         return employee.get();
     }
+    public Employee getEmployeeByUserPass(String user,String pass){
+        AtomicReference<Employee> employee = new AtomicReference<>(new Employee());
+        employees.forEach(e -> {
+            if (e.getUsername().equals(user)&&e.getPassword().equals(pass)){
+                employee.set(e);
+            }
+        });
+        return employee.get();
+    }
+    public boolean isManagerForProject(long managerId) {
+
+        AtomicBoolean flag = new AtomicBoolean(false);
+        projects.forEach(e -> {
+            if (e.getManagerId() == managerId)
+                flag.set(true);
+        });
+        return flag.get();
+    }
 
     public Employee getPartAdmin(String user, String pass) {
         List<Part> parts1 = new LinkedList<>();
@@ -313,6 +332,14 @@ public class DB {
         List<Project> list = new LinkedList<>();
         projects.forEach(project1 -> {
             if (project1.getCustomerId() == customerId)
+                list.add(project1);
+        });
+        return list;
+    }
+    public List<Project> getProjectsForManager(long managerID) {
+        List<Project> list = new LinkedList<>();
+        projects.forEach(project1 -> {
+            if (project1.getManagerId() == managerID)
                 list.add(project1);
         });
         return list;

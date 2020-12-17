@@ -29,9 +29,10 @@ loginBtn.addEventListener('click' , (e)=>{
             if(data.username == null)
                 alert('error')
             else{
-                window.location.href = 'http://localhost:8086/dashbord_Customer'
                 console.log(data)
                 localStorage.setItem("CUSTOMER_OBJECT",JSON.stringify(data))
+                window.location.href = 'http://localhost:8086/dashbord_Customer'
+
                //  CUSTOMER_OBJECT = data
             }
         })

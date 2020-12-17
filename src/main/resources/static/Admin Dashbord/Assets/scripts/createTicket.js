@@ -1,35 +1,29 @@
 // CUSTOMER_OBJECT
 // let currentOBJ = JSON.parse(localStorage.getItem("CUSTOMER_OBJECT"))
 var fileAddress
-let formData = new FormData();
 const AdminObject = JSON.parse(localStorage.getItem('ADMIN_OBJECT'))
-if(localStorage.getItem("EMPLOYEE_ID") !==null){
-    let employee_id = JSON.stringify(localStorage.getItem("EMPLOYEE_ID"))
+if (localStorage.getItem("EMPLOYEE_NAME") !== null) {
+    let employee_name = localStorage.getItem("EMPLOYEE_NAME")
     // employees are destination
-    document.getElementById('destination').value = employee_id
+    document.getElementById('destination').value = employee_name
+    localStorage.removeItem("EMPLOYEE_NAME")
 
 
 }
-else {
-    // company is destination
-
-}
-
-
-
-
-
-
 
 
 document.querySelector('#submitTicket').addEventListener('click', (e) => {
     e.preventDefault()
-    uploadFile()
-
+    if (localStorage.getItem("EMPLOYEE_ID") !== null){
+        uploadFile(localStorage.getItem("EMPLOYEE_ID"), "کارمند")
+        localStorage.removeItem("EMPLOYEE_ID")
+    }else
+        uploadFile("596595", "شرکت")
 
 })
-let sendData = () => {
+let sendData = (destinationID, type) => {
 
+    let formData = new FormData();
 
     formData.append('companyId', 596595);
     formData.append('generateTime', moment().locale('fa').format('MMMM Do YYYY, h:mm '));
@@ -73,7 +67,7 @@ let sendData = () => {
         })
 }
 
-let uploadFile = () => {
+let uploadFile = (destinationID, type) => {
 
     const doc = document.querySelector('#document')
     const fd = new FormData()
@@ -90,7 +84,7 @@ let uploadFile = () => {
         .then(response => response.json())
         .then(data => {
             fileAddress = data.filePath
-            sendData()
+            sendData(destinationID, type)
         })
 
 

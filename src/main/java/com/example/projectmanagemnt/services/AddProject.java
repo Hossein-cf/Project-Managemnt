@@ -3,6 +3,7 @@ package com.example.projectmanagemnt.services;
 import com.example.projectmanagemnt.DBHelper.DB;
 
 import com.example.projectmanagemnt.models.company.Customer;
+import com.example.projectmanagemnt.models.company.Employee;
 import com.example.projectmanagemnt.models.company.Project;
 import com.example.projectmanagemnt.models.enums.ProjectCondition;
 import org.springframework.web.bind.annotation.*;
@@ -33,6 +34,11 @@ public class AddProject {
     public Project getProjectForCompany(@RequestBody Project project) {
         System.out.println(project.getId());
         return dbHelper.getProjectById(project.getId());
+    }
+    @PostMapping(path = "/getProjectsForCurrentManager")
+    public List<Project> getProjectsForCurrentManager(@RequestBody Employee manager) {
+        System.out.println(manager.getId());
+        return dbHelper.getProjectsForManager(manager.getId());
     }
 
     @GetMapping(path = "/getNotStartedProjects")

@@ -3,6 +3,8 @@ document.querySelector('#submit').addEventListener('click',(e)=>{
     let form = document.getElementById('addEmployee');
     let formData = new FormData(form);
     formData.append('companyId', 596595);
+    formData.append('username', formData.get("email"));
+    formData.append('password', formData.get("nationalNumber"));
 
     var object = {};
     formData.forEach(function(value, key){
