@@ -23,6 +23,9 @@ function setInfosToTable() {
 
     for (const item of arrayOfEmployees) {
 
+
+
+
     }
 
 }
