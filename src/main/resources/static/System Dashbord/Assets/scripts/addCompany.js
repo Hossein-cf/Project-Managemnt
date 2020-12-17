@@ -1,10 +1,10 @@
-document.querySelector('.submit').addEventListener('click',(e)=>{
+document.querySelector('.submit').addEventListener('click', (e) => {
     e.preventDefault()
     let form = document.getElementById('addCompany');
     let formData = new FormData(form);
 
     var object = {};
-    formData.forEach(function(value, key){
+    formData.forEach(function (value, key) {
         object[key] = value;
     });
     var json = JSON.stringify(object);
@@ -26,23 +26,23 @@ document.querySelector('.submit').addEventListener('click',(e)=>{
     private double satisfactionPercentage;//    درصد رضایت
     private List<Ticket> tickets;*/
 
-    fetch('http://localhost:8086/companyPost',{
+    fetch('http://localhost:8086/companyPost', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json;charset=utf-8'
         },
         body: json
     })
-        .then(response => response.json())
-        .then(res => console.log(res))
-
-    let change = ()=>{
-        window.location.href = 'http://localhost:8086/systemDashboard'
-    }
+        .then(response => response)
+        .then(res => {
 
 
-    setTimeout(change,1000)
-    //window.location.href = 'http://localhost:8086/systemDashboard'
+            console.log(res)
+            alert("success")
+            window.location.href = 'http://localhost:8086/systemDashboard'
+            }
+        )
+
 
 })
 

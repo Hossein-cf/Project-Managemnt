@@ -26,18 +26,25 @@ public class AddEmployee {
 
     @PostMapping(path = "/getAllEmployeeOfCurrentPart", consumes = "application/json", produces = "application/json")
     public List<Employee> getAllEmployeeOfCurrentPart(@RequestBody Part part) {
-        List<Employee> employees = new LinkedList<>();
-        Employee employee = new Employee();
-        employee.setPartId(part.getId());
-        employee.setId(4);
-        employee.setName("hossein shkaeri");
-        employee.setPhoneNumber("09149570548");
-        employee.setEmail("shakryhsyn1@gmail.com");
-        System.out.println(part.getId());
-        employees.add(employee);
-        if (part.getId() == employee.getPartId())
-            return employees;
+//        List<Employee> employees = new LinkedList<>();
+//        Employee employee = new Employee();
+//        employee.setPartId(part.getId());
+//        employee.setId(4);
+//        employee.setName("hossein shkaeri");
+//        employee.setPhoneNumber("09149570548");
+//        employee.setEmail("shakryhsyn1@gmail.com");
+//        System.out.println(part.getId());
+//        employees.add(employee);
+//        if (part.getId() == employee.getPartId())
+//            return employees;
         return dbHelper.getEmployeesForPart(part.getId());
+
+
+    }
+    @GetMapping(path = "/getAllEmployeesDontHavePart")
+    public List<Employee> getAllEmployeesDontHavePart() {
+
+        return dbHelper.getEmployeesDontHavePart();
 
 
     }
@@ -73,7 +80,7 @@ public class AddEmployee {
     public void addEmployeeToPart(@RequestBody AddEmployeeToPart addEmployeeToPart) {
         DB db = new DB();
 
-        addEmployeeToPart.getId().forEach( aLong -> {
+        addEmployeeToPart.getIds().forEach( aLong -> {
           Employee employee=  db.getEmployee(aLong);
           employee.setPartId(addEmployeeToPart.getPartId());
           db.updateEmployee(employee);
@@ -86,6 +93,6 @@ public class AddEmployee {
 }
 @Data
 class AddEmployeeToPart{
-    List<Long> id;
+    List<Long> ids;
     long partId;
 }

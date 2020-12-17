@@ -1,15 +1,7 @@
 package com.example.projectmanagemnt.controllers;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.multipart.MultipartFile;
-
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 
 @Controller
 public class MainController {
@@ -46,6 +38,11 @@ public class MainController {
     public String goToLogin_Company() {
 
         return "login_Company";
+    }
+    @RequestMapping("/AddEmployeeToDepartment_Company")
+    public String goAddEmployeeToDepartment_Company() {
+
+        return "AddEmployeeToDepartment_Company";
     }
 
     @RequestMapping("/AddDepartment_Company")

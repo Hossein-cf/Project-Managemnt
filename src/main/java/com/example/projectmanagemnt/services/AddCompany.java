@@ -21,26 +21,27 @@ public class AddCompany {
 
     }
 
-    @PostMapping(path = "/companyGet", consumes = "application/json",produces = "application/json")
-    public @ResponseBody Company get(@RequestBody Company userPass ) {
-        System.out.println(userPass.getPassword());
-        System.out.println(userPass.getUsername());
-        Company company = new Company();
-        company.setName("fuck");
-        company.setEmail("fuck1");
-        company.setPassword("admin");
-        company.setUsername("admin");
-        company.setCreateTime("fuck3");
-        if (userPass.getPassword().trim().equals("admin") || userPass.getUsername().trim().equals("admin"))
-       // return dbHelper.getCompany(userPass.Username,userPass.Password);
-        return company;
-        else
-            return new Company();
-
+    @PostMapping(path = "/companyGet", consumes = "application/json", produces = "application/json")
+    public @ResponseBody
+    Company get(@RequestBody Company userPass) {
+//        System.out.println(userPass.getPassword());
+//        System.out.println(userPass.getUsername());
+//        Company company = new Company();
+//        company.setName("fuck");
+//        company.setEmail("fuck1");
+//        company.setPassword("admin");
+//        company.setUsername("admin");
+//        company.setCreateTime("fuck3");
+//        if (userPass.getPassword().trim().equals("admin") || userPass.getUsername().trim().equals("admin"))
+//
+//        return company;
+//        else
+//            return new Company();
+        return dbHelper.getCompany(userPass.getUsername(), userPass.getPassword());
     }
 
     @GetMapping(path = "/companySize")
-    public int getSize()  {
+    public int getSize() {
 
         return DB.companies.size();
 

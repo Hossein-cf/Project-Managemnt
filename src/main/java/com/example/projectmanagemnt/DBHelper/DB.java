@@ -187,15 +187,17 @@ public class DB {
         });
         return employee.get();
     }
-    public Employee getEmployeeByUserPass(String user,String pass){
+
+    public Employee getEmployeeByUserPass(String user, String pass) {
         AtomicReference<Employee> employee = new AtomicReference<>(new Employee());
         employees.forEach(e -> {
-            if (e.getUsername().equals(user)&&e.getPassword().equals(pass)){
+            if (e.getUsername().equals(user) && e.getPassword().equals(pass)) {
                 employee.set(e);
             }
         });
         return employee.get();
     }
+
     public boolean isManagerForProject(long managerId) {
 
         AtomicBoolean flag = new AtomicBoolean(false);
@@ -228,6 +230,15 @@ public class DB {
         employeeIds.forEach(item ->
                 list.add(getEmployee(item))
         );
+        return list;
+    }
+
+    public List<Employee> getEmployeesDontHavePart() {
+        List<Employee> list = new LinkedList<>();
+        employees.forEach(item -> {
+            if (item.getPartId() == 0)
+                list.add(item);
+        });
         return list;
     }
 
@@ -336,6 +347,7 @@ public class DB {
         });
         return list;
     }
+
     public List<Project> getProjectsForManager(long managerID) {
         List<Project> list = new LinkedList<>();
         projects.forEach(project1 -> {
