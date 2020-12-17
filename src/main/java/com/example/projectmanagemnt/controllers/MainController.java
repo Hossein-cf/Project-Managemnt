@@ -267,6 +267,10 @@ public class MainController {
     }
     //upload
    // public static String uploadDirectory = System.getProperty("user.dir") + "/src/main/resources/static/uploads";
-
+//department
+    @RequestMapping("/DepartmentPage_Company")
+    public String goToDepartmentPage(){
+        return "DepartmentPage_Company";
+    }
 
 }
