@@ -31,8 +31,8 @@ public class AddPartOfCompany {
     }
 
 
-    @PostMapping(path = "/GetPartsOfCompany", consumes = "application/json", produces = "application/json")
-    public List<Part> getPartsOfCompany(Long companyId) {
+    @PostMapping(path = "/GetPartsOfCompany")
+    public List<Part> getPartsOfCompany(@RequestBody Company company) {
 //        Part part = new Part();
 //        part.setId(12l);
 //        part.setName("fani");
@@ -48,7 +48,7 @@ public class AddPartOfCompany {
 //        List<Part> list = new LinkedList<>();
 //        list.add(part);
 //        list.add(part1);
-        return new DB().getAllPartsForCompany(companyId);
+        return new DB().getAllPartsForCompany(company.getId());
         //return dbHelper.getAllPartsForCompany(companyId);
     }
 

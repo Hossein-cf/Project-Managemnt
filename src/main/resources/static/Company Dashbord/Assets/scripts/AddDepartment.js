@@ -15,6 +15,7 @@ document.querySelector('#submit').addEventListener('click', (e) => {
     let form = document.getElementById('addDepartment');
     let formData = new FormData(form);
     formData.append('companyId', 596595);
+    formData.append('createTime', moment().locale('fa').format('MMMM Do YYYY, h:mm a'));
     var object = {};
     formData.forEach(function (value, key) {
         object[key] = value;

@@ -15,7 +15,7 @@ public class Part {
     private String createTime;
     private String username;
     private String password;
-    private PartActivity partActivity;
+    private String partActivity=PartActivity.ACTIVE.value;
     private List<Employee> employeesForPart;
     private List<Ticket> tickets;
     private double satisfactionPercentage;//    درصد رضایت

@@ -22,16 +22,16 @@ public class AddEmployee {
 
     @PostMapping(path = "/employeeGet", consumes = "application/json", produces = "application/json")
     public Employee get(@RequestBody Employee employee) {
-        Employee employee2 = new Employee();
-        employee2.setName("hossein");
-        employee2.setId(2);
-        Employee employee1 = new Employee();
-        employee1.setName("ali");
-        employee1.setId(3);
-        if (employee.getId() == 2)
-            return employee2;
-        else if (employee.getId() == 3)
-            return employee1;
+//        Employee employee2 = new Employee();
+//        employee2.setName("hossein");
+//        employee2.setId(2);
+//        Employee employee1 = new Employee();
+//        employee1.setName("ali");
+//        employee1.setId(3);
+//        if (employee.getId() == 2)
+//            return employee2;
+//        else if (employee.getId() == 3)
+//            return employee1;
         return dbHelper.getEmployee(employee.getId());
     }
 
